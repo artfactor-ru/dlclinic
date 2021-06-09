@@ -1,0 +1,8 @@
+*.min.*
+/node_modules/
+/.idea/
+/build/
+*.bak
+*.mp4
+*.zip
+debug.log

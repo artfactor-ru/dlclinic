@@ -1,0 +1,250 @@
+<!-- Шапка и меню -->
+<include src="components/header.html"></include>
+
+<main>
+
+    <include src="components/banner-inner.html"></include>
+
+    <section class="block-light block-inner">
+        <div class="container">
+
+            <include src="components/breadcrumbs.html" locals='{
+                "text": "Вопрос-ответ"
+            }'></include>
+
+
+            <div class="faq">
+
+
+                <nav class="tag">
+
+                    <span class="tag__name">Все разделы <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.776 5.69324L1.32533 0.223905C1.008 -0.0747623 0.522667 -0.0747623 0.224 0.223905C-0.0746665 0.522571 -0.0746665 1.02657 0.224 1.32524L5.13333 6.23457L0.224 11.1439C-0.0746667 11.4612 -0.0746667 11.9466 0.224 12.2452C0.522667 12.5439 1.008 12.5439 1.32533 12.2452L6.776 6.79457C7.07467 6.47724 7.07467 5.9919 6.776 5.69324Z" fill="#3A4047"/>
+                </svg>
+
+
+                    <button class="close"></button>
+                </span>
+
+
+                    <ul class="tag__menu">
+                        <li class="tag__item tag__item--more">
+                            <a class="tag__link current" href="">Стоматология
+                            <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.776 5.69324L1.32533 0.223905C1.008 -0.0747623 0.522667 -0.0747623 0.224 0.223905C-0.0746665 0.522571 -0.0746665 1.02657 0.224 1.32524L5.13333 6.23457L0.224 11.1439C-0.0746667 11.4612 -0.0746667 11.9466 0.224 12.2452C0.522667 12.5439 1.008 12.5439 1.32533 12.2452L6.776 6.79457C7.07467 6.47724 7.07467 5.9919 6.776 5.69324Z" fill="#3A4047"/>
+                                </svg>
+                        </a>
+
+                            <ul class="tag__level">
+                                <li class="tag__item tag__item--back">
+                                    <a class="tag__link" href=""><svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.776 5.69324L1.32533 0.223905C1.008 -0.0747623 0.522667 -0.0747623 0.224 0.223905C-0.0746665 0.522571 -0.0746665 1.02657 0.224 1.32524L5.13333 6.23457L0.224 11.1439C-0.0746667 11.4612 -0.0746667 11.9466 0.224 12.2452C0.522667 12.5439 1.008 12.5439 1.32533 12.2452L6.776 6.79457C7.07467 6.47724 7.07467 5.9919 6.776 5.69324Z" fill="#3A4047"/>
+                                    </svg>
+                                    Назад
+                                </a>
+                                </li>
+                                <li class="tag__item">
+                                    <a class="tag__link" href="">Лечение зубов</a>
+                                </li>
+                                <li class="tag__item">
+                                    <a class="tag__link" href="">Лечение десен</a>
+                                </li>
+                                <li class="tag__item">
+                                    <a class="tag__link" href="">Отбеливание зубов</a>
+                                </li>
+                                <li class="tag__item">
+                                    <a class="tag__link" href="">Ортодонтия</a>
+                                </li>
+                                <li class="tag__item">
+                                    <a class="tag__link" href="">Протезирование зубов</a>
+                                </li>
+                                <li class="tag__item">
+                                    <a class="tag__link" href="">Имплантация зубов</a>
+                                </li>
+                                <li class="tag__item">
+                                    <a class="tag__link" href="">Беременность и лечение зубов</a>
+                                </li>
+                                <li class="tag__item">
+                                    <a class="tag__link" href="">Прочие вопросы</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="tag__item">
+                            <a class="tag__link" href="">Детская стоматология</a>
+                        </li>
+                        <li class="tag__item">
+                            <a class="tag__link" href="">Эстетическая хирургия лица</a>
+                        </li>
+                        <li class="tag__item">
+                            <a class="tag__link" href="">Медицинская косметология</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- Выводится на дестктопе на странице разделов -->
+                <nav class="sub-tag">
+                    <ul class="sub-tag__menu">
+                        <li class="sub-tag__item">
+                            <a class="sub-tag__link current" href="">Лечение зубов</a>
+                        </li>
+                        <li class="sub-tag__item">
+                            <a class="sub-tag__link" href="">Лечение десен</a>
+                        </li>
+                        <li class="sub-tag__item">
+                            <a class="sub-tag__link" href="">Отбеливание зубов</a>
+                        </li>
+                        <li class="sub-tag__item">
+                            <a class="sub-tag__link" href="">Ортодонтия</a>
+                        </li>
+
+                        <li class="sub-tag__item">
+                            <a class="sub-tag__link" href="">Протезирование зубов</a>
+                        </li>
+
+                        <li class="sub-tag__item">
+                            <a class="sub-tag__link" href="">Имплантация зубов</a>
+                        </li>
+
+                        <li class="sub-tag__item">
+                            <a class="sub-tag__link" href="">Беременность и лечение зубов</a>
+                        </li>
+
+                        <li class="sub-tag__item">
+                            <a class="sub-tag__link" href="">Прочие вопросы</a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+
+                <div class="flex-wrap flex-wrap--title">
+
+
+
+                    <h1>Вопрос-ответ</h1>
+
+                    <a class="button button--dark" data-fancybox href="javascript:;" data-src="#popup-question"> <span>
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28.1211 5.911L22.2344 0L1.87891 20.4397V26.3467H7.76951L28.1211 5.911ZM9.39889 22.22L5.9926 18.7996L17.517 7.22742L20.9233 10.6478L9.39889 22.22ZM25.6407 5.911L22.1635 9.40248L18.7572 5.98213L22.2344 2.49059L25.6407 5.911ZM3.63672 24.5896V21.1652L4.7524 20.0449L8.15869 23.4653L7.03902 24.5896H3.63672V24.5896Z" fill="white"/>
+                        <path d="M1.87891 28.2427H28.1201V29.9998H1.87891V28.2427Z" fill="white"/>
+                        <path d="M13.9316 24.5894H28.1201V26.3465H13.9316V24.5894Z" fill="white"/>
+                    </svg>                    
+                    Задать вопрос</span></a>
+                </div>
+
+                <div class="faq__desc">
+                    <p>На вопросы, заданные на сайте, врачи и администрация центра отвечают в течение 3 дней. Ваши вопросы и наши ответы хранятся на сайте в течение года. Часто задаваемые вопросы для вашего удобства разделены на рубрики</p>
+                </div>
+
+                <ul class="faq__list">
+                    <li class="faq__item">
+                        <div class="faq__quest">
+                            <h3 class="faq__quest-title">Добрый день! Можно ли в вашей клинике поставить пломбу?</h3>
+                            <p class="faq__quest-about">
+                                <!-- Если врач то кликабельная ссылка специалиста на админе не надо -->
+                                <span class="faq__quest-name">Марина Михайловская</span>
+                                <span class="faq__quest-time">1 апрель 2021</span>
+                            </p>
+                        </div>
+                        <div class="faq__answ">
+                            <p class="faq__answ-about">
+                                <img class="faq__answ-img" src="./img/avatar.png" alt="">
+                                <div class="faq__answ-name">
+                                    <span class="faq__answ-author">Администрация клиники</span>
+
+                                </div>
+                            </p>
+
+                            <div class="faq__text">
+                                <p>Здравствуйте, Марина!</p>
+                                <br><br>
+                                <p>Конечно, мы лечим кариес, ставим пломбы и даем на них гарантию. Вы можете записаться к любому из наших стоматологов-терапевтов. Все врачи имеют высокую квалификацию. В случае необходимости (при глубоком кариесе) Вам будет
+                                    предложено провести компьютерную томографию в нашей клинике. Процедура лечения кариеса проводится безболезненно, под местной анестезией. Пломбировочные материалы и оборудование - высокого качества. Для пациентов, впервые
+                                    обратившихся в нашу стоматологию, действуют скидки. Вы можете позвонить по одному из телефонов: (812) 232-88-25, 233-19-08, 383-19-66 и записаться на прием. Либо пришлите, пожалуйста, на адрес info@denta-l.com свой
+                                    телефон, и наши администраторы свяжутся с Вами. Спасибо за обращение в нашу клинику!</p>
+                                <div>
+                                </div>
+                    </li>
+
+                    <li class="faq__item">
+                        <div class="faq__quest">
+                            <h3 class="faq__quest-title">Добрый день! Можно ли в вашей клинике поставить пломбу?</h3>
+                            <p class="faq__quest-about">
+                                <span class="faq__quest-name">Марина Михайловская</span>
+                                <span class="faq__quest-time">1 апрель 2021</span>
+                            </p>
+                        </div>
+                        <div class="faq__answ">
+                            <p class="faq__answ-about">
+                                <img class="faq__answ-img" src="./img/avatar1.jpg" alt="">
+                                <div class="faq__answ-name">
+                                    <span class="faq__answ-author"><a href="">Раду Рано Эргешевна</a></span>
+                                    <span class="faq__answ-position">Врач, челюстно-лицевой хирург, пластический хирург</span>
+                                </div>
+                            </p>
+
+                            <div class="faq__text">
+                                <p>Здравствуйте, Марина!</p>
+                                <br><br>
+                                <p>Конечно, мы лечим кариес, ставим пломбы и даем на них гарантию. Вы можете записаться к любому из наших стоматологов-терапевтов. Все врачи имеют высокую квалификацию. В случае необходимости (при глубоком кариесе) Вам будет
+                                    предложено провести компьютерную томографию в нашей клинике. Процедура лечения кариеса проводится безболезненно, под местной анестезией. Пломбировочные материалы и оборудование - высокого качества. Для пациентов, впервые
+                                    обратившихся в нашу стоматологию, действуют скидки. Вы можете позвонить по одному из телефонов: (812) 232-88-25, 233-19-08, 383-19-66 и записаться на прием. Либо пришлите, пожалуйста, на адрес info@denta-l.com свой
+                                    телефон, и наши администраторы свяжутся с Вами. Спасибо за обращение в нашу клинику!</p>
+                                <div>
+                                </div>
+                    </li>
+
+                    <li class="faq__item">
+                        <div class="faq__quest">
+                            <h3 class="faq__quest-title">Добрый день! Можно ли в вашей клинике поставить пломбу?</h3>
+                            <p class="faq__quest-about">
+                                <span class="faq__quest-name">Марина Михайловская</span>
+                                <span class="faq__quest-time">1 апрель 2021</span>
+                            </p>
+                        </div>
+                        <div class="faq__answ">
+                            <p class="faq__answ-about">
+                                <img class="faq__answ-img" src="./img/avatar1.jpg" alt="">
+                                <div class="faq__answ-name">
+                                    <span class="faq__answ-author"><a href="">Раду Рано Эргешевна</a></span>
+                                    <span class="faq__answ-position">Врач, челюстно-лицевой хирург, пластический хирург</span>
+                                </div>
+                            </p>
+
+                            <div class="faq__text">
+                                <p>Здравствуйте, Марина!</p>
+                                <br><br>
+                                <p>Конечно, мы лечим кариес, ставим пломбы и даем на них гарантию. Вы можете записаться к любому из наших стоматологов-терапевтов. Все врачи имеют высокую квалификацию. В случае необходимости (при глубоком кариесе) Вам будет
+                                    предложено провести компьютерную томографию в нашей клинике. Процедура лечения кариеса проводится безболезненно, под местной анестезией. Пломбировочные материалы и оборудование - высокого качества. Для пациентов, впервые
+                                    обратившихся в нашу стоматологию, действуют скидки. Вы можете позвонить по одному из телефонов: (812) 232-88-25, 233-19-08, 383-19-66 и записаться на прием. Либо пришлите, пожалуйста, на адрес info@denta-l.com свой
+                                    телефон, и наши администраторы свяжутся с Вами. Спасибо за обращение в нашу клинику!</p>
+                                <div>
+                                </div>
+                    </li>
+                </ul>
+                </div>
+
+                <div class="flex-wrap flex-wrap--center">
+                    <include src="components/pagination.html"></include>
+                    <a class="button button--dark button--rewiev" data-fancybox href="javascript:;" data-src="#popup-question"> <span>
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28.1211 5.911L22.2344 0L1.87891 20.4397V26.3467H7.76951L28.1211 5.911ZM9.39889 22.22L5.9926 18.7996L17.517 7.22742L20.9233 10.6478L9.39889 22.22ZM25.6407 5.911L22.1635 9.40248L18.7572 5.98213L22.2344 2.49059L25.6407 5.911ZM3.63672 24.5896V21.1652L4.7524 20.0449L8.15869 23.4653L7.03902 24.5896H3.63672V24.5896Z" fill="white"/>
+                        <path d="M1.87891 28.2427H28.1201V29.9998H1.87891V28.2427Z" fill="white"/>
+                        <path d="M13.9316 24.5894H28.1201V26.3465H13.9316V24.5894Z" fill="white"/>
+                    </svg>                    
+                    Задать вопрос</span></a>
+
+
+                </div>
+
+                </div>
+
+
+    </section>
+</main>
+
+
+<!-- Футер -->
+<include src="components/footer.html"></include>
