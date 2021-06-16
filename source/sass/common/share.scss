@@ -5,6 +5,7 @@
     position: relative;
     overflow: hidden;
     margin-top: 20px;
+    align-items: center;
     @include tablets {
         position: absolute;
         margin-top: 0;
@@ -17,6 +18,20 @@
     }
     @include desktop {
         right: 50px;
+    }
+    &__text {
+        margin-right: 12px;
+        font-size: 14px;
+        line-height: 24px;
+        transition: transform 1s linear;
+        @include tablets {
+            font-size: 18px;
+            line-height: 22px;
+        }
+        @include laptop {
+            font-size: 24px;
+            line-height: 24px;
+        }
     }
 }
 
