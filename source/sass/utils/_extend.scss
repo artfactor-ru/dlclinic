@@ -333,7 +333,7 @@ p {
         }
     }
     &:hover svg {
-        transform: scaleX(1.1) translateX(2px);
+        transform: scaleX(1.1) translateX(-6px);
     }
     &:hover svg path {
         fill: $color-light-grey;
@@ -399,14 +399,6 @@ p {
 
 .swiper-centered-wrapper .swiper-button-prev:hover {
     transform: translateX(-5px);
-}
-
-.block-light-grey .swiper-centered-wrapper .swiper-button-prev:hover {
-    color: #ffffff;
-}
-
-.block-light-grey .swiper-centered-wrapper .swiper-button-next:hover {
-    color: #ffffff;
 }
 
 .swiper-centered-wrapper .swiper-button-next::after,
