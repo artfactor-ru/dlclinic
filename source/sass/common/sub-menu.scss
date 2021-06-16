@@ -114,8 +114,8 @@
         margin-right: 15px;
         margin-bottom: 20px;
         &:not(.current):hover {
-            border: 1px solid $color-light-grey;
-            color: $color-light-grey;
+            border: 1px solid $color-yellow;
+            color: $color-yellow;
         }
     }
     &.current {
