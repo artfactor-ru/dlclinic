@@ -207,6 +207,8 @@ document.querySelector('.search').addEventListener('click', function() {
 
 if (document.querySelector('.share__btn')) {
     document.querySelector('.share__btn').addEventListener('click', function() {
+        const shareListWidth = document.querySelector('.share__list').getBoundingClientRect().width;
         document.querySelector('.share').classList.toggle('active');
+        document.querySelector('.share__text').style.transform = 'translate(-' + (shareListWidth - 40) + 'px, 0)';
     })
 }
