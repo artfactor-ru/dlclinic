@@ -552,7 +552,7 @@ p {
         line-height: 32px;
     }
     @include desktop {
-        padding: 12px 40px;
+        padding: 10px 40px;
     }
     &:hover {
         opacity: 1;
@@ -601,7 +601,7 @@ p {
     background: transparent;
     border: 1px solid #ffffff;
     color: #ffffff;
-    padding: 18px 20px;
+    padding: 9px 20px;
 }
 
 // Обертки для блока как в отзывах
