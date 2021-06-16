@@ -1,0 +1,38 @@
+.gallery {
+    h1 {
+        @include tablets {
+            margin-top: 10px;
+        }
+    }
+    &__list {
+        @include list-destroy;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__item {
+        height: 172px;
+        width: 100%;
+        margin-bottom: 15px;
+        color: #fff;
+        display: flex;
+        @include el-items;
+        @include tablets {
+            margin-bottom: 2%;
+            width: 48%;
+            height: 185px;
+        }
+        @include laptop {
+            margin-bottom: 2.5%;
+            height: 270px;
+            width: 48%;
+        }
+        @media(min-width:1280px) {
+            width: 31.5%;
+        }
+        @include desktop {
+            height: 270px;
+            width: 31.5%;
+        }
+    }
+}
