@@ -23,7 +23,29 @@
         display: none;
     }
 }
-
+.block-light {
+    .video__link {
+        display: flex;
+        background-image: none;
+        color: #3A4047;
+        svg {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            @include laptop {
+                width: 55px;
+                height: 55px;
+            }
+            @include desktop {
+                width: 75px;
+                height: 75px;
+            }
+        }
+        &:hover {
+            color: #ffffff;
+        }
+    }
+}
 .button--inner {
     margin-top: 30px;
 }
