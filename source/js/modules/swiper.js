@@ -132,3 +132,15 @@ document.querySelectorAll('.swiper-container--video').forEach((element) => {
         }
     })
 });
+console.log('123')
+const beforeAfterSlider = document.querySelector('.before-after__slider');
+const beforeAfterSwiper = new Swiper(beforeAfterSlider, {
+    loop: true,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    grabCursor: true,
+    slidesPerView: '1',
+})
