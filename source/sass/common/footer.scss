@@ -168,6 +168,9 @@
 .footer .button {
     display: block;
     max-width: 250px;
+    @include laptop {
+        padding: 10px 40px;
+    }
 }
 
 .footer__contact {

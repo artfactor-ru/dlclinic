@@ -367,6 +367,9 @@
     @include tablets {
         display: block;
     }
+    @include desktop {
+        padding: 10px 40px;
+    }
 }
 
 .form-search {
