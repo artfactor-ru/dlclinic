@@ -113,8 +113,6 @@
 
 .news__item--wslider .button {
     display: block;
-    padding-top: 15px;
-    padding-bottom: 15px;
     text-align: center;
     margin-top: 20px;
     @include tablets {
@@ -123,10 +121,6 @@
     }
     @include laptop {
         align-self: flex-start;
-        padding: 10px 20px;
-    }
-    &:hover span {
-        transform: scale(1.05);
     }
 }
 
