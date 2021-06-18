@@ -604,6 +604,11 @@ p {
     padding: 9px 20px;
 }
 
+// Класс для ресета списков
+.list-destroy {
+    @include list-destroy;
+}
+
 // Обертки для блока как в отзывах
 .flex-wrap {
     display: flex;
