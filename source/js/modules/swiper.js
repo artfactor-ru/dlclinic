@@ -132,7 +132,7 @@ document.querySelectorAll('.swiper-container--video').forEach((element) => {
         }
     })
 });
-console.log('123')
+
 const beforeAfterSlider = document.querySelector('.before-after__slider');
 const beforeAfterSwiper = new Swiper(beforeAfterSlider, {
     loop: true,
