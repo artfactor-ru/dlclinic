@@ -138,8 +138,8 @@ const beforeAfterSwiper = new Swiper(beforeAfterSlider, {
     loop: true,
     spaceBetween: 0,
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.before-after__wrapper .swiper-button-next',
+        prevEl: '.before-after__wrapper .swiper-button-prev',
     },
     grabCursor: true,
     slidesPerView: '1',
@@ -150,9 +150,26 @@ const reviewsSwiper = new Swiper(reviewsSlider, {
     loop: true,
     spaceBetween: 0,
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.reviews__wrapper .swiper-button-next',
+        prevEl: '.reviews__wrapper .swiper-button-prev',
     },
     grabCursor: true,
     slidesPerView: '1',
+})
+
+const certificateItems = document.querySelectorAll('.certificates__slider .swiper-slide');
+if(certificateItems) {
+    certificateItems.forEach((elem) => {
+        elem.style.width = elem.querySelector('img').width + 'px';
+    })
+}
+const certificatesSlider = document.querySelector('.certificates__slider');
+const certificatesSwiper = new Swiper(certificatesSlider, {
+    navigation: {
+        nextEl: '.certificates__wrapper .swiper-button-next',
+        prevEl: '.certificates__wrapper .swiper-button-prev',
+    },
+    grabCursor: true,
+    slidesPerView: 'auto',
+    spaceBetween: 30,
 })
