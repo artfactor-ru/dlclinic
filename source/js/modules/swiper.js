@@ -144,3 +144,15 @@ const beforeAfterSwiper = new Swiper(beforeAfterSlider, {
     grabCursor: true,
     slidesPerView: '1',
 })
+
+const reviewsSlider = document.querySelector('.reviews__slider');
+const reviewsSwiper = new Swiper(reviewsSlider, {
+    loop: true,
+    spaceBetween: 0,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    grabCursor: true,
+    slidesPerView: '1',
+})
