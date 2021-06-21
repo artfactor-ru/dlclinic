@@ -1,4 +1,4 @@
-.rewiev {
+.review {
     @include list-destroy;
     padding-top: 35px;
     padding-bottom: 20px;
@@ -13,7 +13,7 @@
     }
 }
 
-.rewiev__item {
+.review__item {
     padding: 25px;
     border: 2px solid $color-yellow;
     box-sizing: border-box;
@@ -24,7 +24,7 @@
     }
 }
 
-.rewiev__item::before {
+.review__item::before {
     content: "";
     position: absolute;
     background-image: url(../img/icon/right-quote.svg);
@@ -48,7 +48,7 @@
     }
 }
 
-.rewiev__item::after {
+.review__item::after {
     content: "";
     position: absolute;
     background-image: url(../img/icon/left-quote.svg);
@@ -72,7 +72,7 @@
     }
 }
 
-.rewiev__item {
+.review__item {
     & a {
         overflow: hidden;
         opacity: 1 !important;
@@ -90,7 +90,7 @@
     }
 }
 
-.rewiev__date {
+.review__date {
     color: $color-light-grey;
     display: inline-block;
     margin-top: 15px;
@@ -116,11 +116,11 @@
     }
 }
 
-.rewiev__desc {
+.review__desc {
     margin-top: 10px;
 }
 
-.rewiev__video {
+.review__video {
     display: block;
     position: relative;
     opacity: 1 !important;
@@ -150,7 +150,7 @@
     }
 }
 
-.rewiev__video {
+.review__video {
     height: 192px;
     width: 100%;
     object-fit: cover;
@@ -162,11 +162,11 @@
     }
 }
 
-.rewiev__video img {
+.review__video img {
     height: 100%;
 }
 
-.rewiev img {
+.review img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -197,7 +197,7 @@
     }
 }
 
-.button--rewiev {
+.button--review {
     margin-bottom: 40px;
     @include tablets {
         margin-bottom: 25px;
