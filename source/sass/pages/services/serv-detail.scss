@@ -125,16 +125,23 @@
         @include laptop {
             right: -40px;
         }
+        &:hover {
+            transform: translateX(5px)
+        }
     }
     .swiper-button-prev {
         left: 0;
         @include laptop {
             left: -40px;
         }
+        &:hover {
+            transform: translateX(-5px)
+        }
     }
     .swiper-button-next,
     .swiper-button-prev {
         top: 15%;
+        transition: $transition-speed;
         @include laptop {
             top: 50%;
         }
