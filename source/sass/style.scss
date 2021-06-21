@@ -25,6 +25,9 @@
     @import 'common/sub-menu';
     @import 'common/popup-form';
     @import 'common/share';
+    @import 'common/reviews';
+    @import 'common/others';
+    @import 'common/before-after';
     // Услуги
     @import 'pages/services/serv';
     @import 'pages/services/serv-detail';
@@ -32,7 +35,6 @@
     @import 'pages/specialists/spec-list';
     // Отзывы
     @import 'pages/reviews/reviews';
-    @import 'common/reviews';
     // Новости
     @import 'pages/news/news-list';
     // Детальная
