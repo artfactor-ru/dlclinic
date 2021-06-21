@@ -1,0 +1,22 @@
+.others {
+    h2 {
+        display: none;
+        @include tablets {
+            display: block;
+        }
+    }
+    &__row {
+        .button {
+            margin-top: 20px;
+            @include tablets {
+                margin-top: 0;
+            }
+        }
+        @include tablets {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+    }
+}
