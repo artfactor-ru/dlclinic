@@ -198,6 +198,7 @@ gulp.task("server", function() {
     gulp.watch("./source/img/**/*.{png,jpg,svg}", gulp.series("image")).on("change", browserSync.reload);
     gulp.watch("./source/img/**/*.{png,jpg,svg}", gulp.series("copy")).on("change", browserSync.reload);
     gulp.watch("./source/js/*.js", { usePolling: true }, gulp.series("minifyjs")).on("change", browserSync.reload);
+    gulp.watch("./source/js/modules/*.js", { usePolling: true }, gulp.series("minifyjs")).on("change", browserSync.reload);
     gulp.watch("./source/sass/**/*.{sass,scss}", { usePolling: true }, gulp.series("css"));
     gulp.watch("./source/components/**", gulp.series("html")).on("change", browserSync.reload);
     gulp.watch("./source/*.html", gulp.series("html")).on("change", browserSync.reload);
