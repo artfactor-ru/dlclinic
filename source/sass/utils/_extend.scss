@@ -767,7 +767,7 @@ table {
 .fl_upld {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
 }
 
 #fl_inp {
@@ -802,9 +802,9 @@ table {
     position: relative;
 }
 .remove-button {
+    display: none;
     cursor: pointer;
     position: absolute;
-    display: flex;
     align-items: center;
     justify-content: center;
     background-color: $color-grey;
