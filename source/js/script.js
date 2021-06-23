@@ -6,6 +6,7 @@ import * as swiper from './modules/swiper.js';
 import * as animation from './modules/animation.js';
 import * as menu from './modules/menu.js';
 import * as validation from './modules/validation.js';
+import * as inputFile from './modules/inputFile.js';
 import { mapInit } from './modules/map.js';
 
 import 'lazysizes';
