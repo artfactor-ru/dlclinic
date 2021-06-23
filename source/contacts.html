@@ -1,0 +1,123 @@
+<!-- Шапка и меню -->
+<include src="components/header.html"></include>
+
+<main>
+
+    <include src="components/banner-inner.html"></include>
+
+    <div class="block-light block-inner">
+        <div class="container">
+            <include src="components/breadcrumbs.html" locals='{
+                "text": "Контакты"
+            }'></include>
+
+            <section class="contacts">
+                <div class="contacts__heading">
+                    <h1>Контакты</h1>
+                    <a href="" class="button"><span>Записаться на прием</span></a>
+                </div>
+                <div class="contacts__row">
+                    <div class="contacts__wrapper">
+                        <div class="contacts__image">
+                            <img id="map1" src="./img/contacts/bolshoy_pr.jpg" alt="Большой пр-кт" width="365" height="215">
+                        </div>
+                        <div class="contacts__data">
+                            <div class="contacts__item contacts__item--address">
+                                <div class="contacts__title">Адрес:</div>
+                                <span>СПб, Большой пр. П.С., 9</span>
+                            </div>
+                            <div class="contacts__item contacts__item--phones">
+                                <div class="contacts__title">Телефон:</div>
+                                <a href="tel:+78122328825">(812) 232-88-25, </a>
+                                <a href="tel:+78123831966">(812) 383-19-66, </a>
+                                <a href="tel:+78122331908">(812) 233-19-08</a>
+                            </div>
+                            <div class="contacts__item contacts__item--schedule">
+                                <div class="contacts__title">Время работы:</div>
+                                <span>ПН-СБ с 9:00 до 21:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts__wrapper">
+                        <div class="contacts__image">
+                            <img id="map2" src="./img/contacts/morskoy_pr.jpg" alt="Морской пр-кт" width="365" height="215">
+                        </div>
+                        <div class="contacts__data">
+                            <div class="contacts__item contacts__item--address">
+                                <div class="contacts__title">Адрес:</div>
+                                <span>Морской проспект, дом 15</span>
+                            </div>
+                            <div class="contacts__item contacts__item--phones">
+                                <div class="contacts__title">Телефон:</div>
+                                <a href="tel:+78122328825">(812) 232-88-25, </a>
+                                <a href="tel:+78123831966">(812) 383-19-66, </a>
+                                <a href="tel:+78122331908">(812) 233-19-08</a>
+                            </div>
+                            <div class="contacts__item contacts__item--schedule">
+                                <div class="contacts__title">Время работы:</div>
+                                <span>ПН-СБ с 9:00 до 21:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__row">
+                    <div class="contacts__how-to-get">
+                        <h2>Как добраться</h2>
+                        <p><strong>Филиал на Большом проспекте П.С. </strong>находится в непосредственной близости от станции метро «Спортивная» (380 м). Относительно недалеко от стоматологической клиники DLClinic станции метро «Чкаловская» (1,1 км), «Петроградская» (1,7 км) и «Горьковская» (1,5 км).</p>
+                        <p>Если Вы собираетесь приехать в клинику на Большом пр.П.С. на машине, пожалуйста, добавьте несколько минут на парковку. Парковка в районе клиники возможна на улицах: Зверинская, Съезжинская и Красного Курсанта. Платные автомобильные парковки: проспект Добролюбова, 18а (Спорткомплекс «Юбилейный») и улица Ждановская, 2 (Стадион СКА).</p>
+                        <p><strong>Филиал на Морском проспекте</strong> находится рядом со станцией метро «Крестовский остров» (600 м).</p>
+                        <p>Припарковать машину возле филиала клиники на Морском проспекте не составит большого труда, Вам не нужно отводить для этого дополнительное время.</p>
+                    </div>
+                    <div class="map map--animation1">
+                            <div id="yandexmapa"></div>
+
+                            <div id="lat" style="display: none;">59.971190</div>
+                            <div id="lon" style="display: none;">30.269528</div>
+                            <div id="lat2" style="display: none;">59.954385</div>
+                            <div id="lon2" style="display: none;">30.293776</div>
+
+                            <div id="adress" style="display: none;">Стоматология DLclinic</div>
+                            <div id="adress2" style="display: none;">Медицинский центр DLclinic</div>
+                    </div>
+                </div>
+            </section>
+            <section class="contacts__buttons">
+                <a class="button button--dark" data-fancybox href="javascript:;" data-src="#popup-question">
+                    <span>
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.1211 5.911L22.2344 0L1.87891 20.4397V26.3467H7.76951L28.1211 5.911ZM9.39889 22.22L5.9926 18.7996L17.517 7.22742L20.9233 10.6478L9.39889 22.22ZM25.6407 5.911L22.1635 9.40248L18.7572 5.98213L22.2344 2.49059L25.6407 5.911ZM3.63672 24.5896V21.1652L4.7524 20.0449L8.15869 23.4653L7.03902 24.5896H3.63672V24.5896Z" fill="white"></path>
+                            <path d="M1.87891 28.2427H28.1201V29.9998H1.87891V28.2427Z" fill="white"></path>
+                            <path d="M13.9316 24.5894H28.1201V26.3465H13.9316V24.5894Z" fill="white"></path>
+                        </svg>
+                        Задать вопрос
+                    </span>
+                </a>
+                <a class="button button--dark" data-fancybox href="javascript:;" data-src="#popup-review">
+                    <span>
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.1211 5.911L22.2344 0L1.87891 20.4397V26.3467H7.76951L28.1211 5.911ZM9.39889 22.22L5.9926 18.7996L17.517 7.22742L20.9233 10.6478L9.39889 22.22ZM25.6407 5.911L22.1635 9.40248L18.7572 5.98213L22.2344 2.49059L25.6407 5.911ZM3.63672 24.5896V21.1652L4.7524 20.0449L8.15869 23.4653L7.03902 24.5896H3.63672V24.5896Z" fill="white"></path>
+                            <path d="M1.87891 28.2427H28.1201V29.9998H1.87891V28.2427Z" fill="white"></path>
+                            <path d="M13.9316 24.5894H28.1201V26.3465H13.9316V24.5894Z" fill="white"></path>
+                        </svg>
+                        Оставить отзыв
+                    </span>
+                </a>
+                <a class="button button--dark" data-fancybox href="javascript:;" data-src="#popup-question">
+                    <span>
+                        <svg width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.7137 24.1033L16.829 1.78645C16.4473 1.12521 15.7635 0.730469 15 0.730469C14.2365 0.730469 13.5527 1.12521 13.171 1.78645L0.286348 24.1033C-0.0954492 24.7645 -0.0954492 25.5541 0.286348 26.2152C0.668086 26.8765 1.35182 27.2712 2.11535 27.2712H27.8846C28.6482 27.2712 29.3319 26.8765 29.7137 26.2152C30.0954 25.5541 30.0954 24.7645 29.7137 24.1033ZM28.1895 25.3353C28.1516 25.401 28.0614 25.5113 27.8847 25.5113H2.11535C1.93852 25.5113 1.8484 25.4011 1.81055 25.3353C1.77264 25.2696 1.72213 25.1364 1.81055 24.9833L14.6951 2.66641C14.7836 2.5133 14.9241 2.49039 14.9999 2.49039C15.0759 2.49039 15.2164 2.51324 15.3047 2.66641L28.1895 24.9833C28.2779 25.1364 28.2274 25.2696 28.1895 25.3353Z" fill="white"/>
+                            <path d="M15.88 8.73242H14.12V18.119H15.88V8.73242Z" fill="white"/>
+                            <path d="M14.9999 22.2266C15.6479 22.2266 16.1732 21.7012 16.1732 21.0532C16.1732 20.4052 15.6479 19.8799 14.9999 19.8799C14.3519 19.8799 13.8265 20.4052 13.8265 21.0532C13.8265 21.7012 14.3519 22.2266 14.9999 22.2266Z" fill="white"/>
+                        </svg>                            
+                        Сообщить об ошибке
+                    </span>
+                </a>
+            </section>
+
+        </div>
+    </div>
+
+</main>
+
+<!-- Футер -->
+<include src="components/footer.html"></include>
