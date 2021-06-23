@@ -79,10 +79,6 @@
 .label-checkbox {
     font-size: 14px;
     line-height: 22px;
-    @include tablets {
-        font-size: 16px;
-        line-height: 30px;
-    }
     color: $color-grey;
     font-style: normal;
     font-weight: normal;
@@ -131,7 +127,7 @@
     cursor: pointer;
     color: #fff;
     background-color: $color-grey;
-    padding: 25px 75px;
+    padding: 20px 75px;
 }
 
 .fancybox-slide--html .fancybox-close-small {
