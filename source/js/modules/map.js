@@ -61,11 +61,13 @@ export function mapInit() {
             });
             let flagClick = false;
             let flagClick2 = false;
+            const map1 = document.getElementById('map1');
+            const map2 = document.getElementById('map2');
             myGeoObjects[0].events.add('click', function(e) {
-                document.getElementById('map2').classList.remove('active');
-                document.getElementById('map1').classList.add('active');
-                document.getElementById('map2').classList.add('unactive');
-                document.getElementById('map1').classList.remove('unactive');
+                map2.classList.remove('active');
+                map1.classList.add('active');
+                map2.classList.add('unactive');
+                map1.classList.remove('unactive');
                 myGeoObjects[0].options.set("iconImageSize", [40, 40]);
                 myGeoObjects[0].options.set("iconImageHref", './img/pin-blue.svg');
                 myGeoObjects[1].options.set("iconImageSize", [32, 32]);
@@ -75,10 +77,10 @@ export function mapInit() {
 
             });
             myGeoObjects[1].events.add('click', function() {
-                document.getElementById('map2').classList.add('active');
-                document.getElementById('map1').classList.remove('active');
-                document.getElementById('map2').classList.remove('unactive');
-                document.getElementById('map1').classList.add('unactive');
+                map2.classList.add('active');
+                map1.classList.remove('active');
+                map2.classList.remove('unactive');
+                map1.classList.add('unactive');
                 myGeoObjects[0].options.set("iconImageSize", [32, 32]);
                 myGeoObjects[0].options.set("iconImageHref", './img/pin.svg');
                 myGeoObjects[1].options.set("iconImageSize", [40, 40]);
@@ -88,11 +90,11 @@ export function mapInit() {
 
             });
 
-            document.getElementById('map1').addEventListener('click', function() {
-                document.getElementById('map2').classList.remove('active');
-                document.getElementById('map1').classList.add('active');
-                document.getElementById('map2').classList.add('unactive');
-                document.getElementById('map1').classList.remove('unactive');
+            map1.addEventListener('click', function() {
+                map2.classList.remove('active');
+                map1.classList.add('active');
+                map2.classList.add('unactive');
+                map1.classList.remove('unactive');
                 myGeoObjects[0].options.set("iconImageSize", [40, 40]);
                 myGeoObjects[0].options.set("iconImageHref", './img/pin-blue.svg');
                 myGeoObjects[1].options.set("iconImageSize", [32, 32]);
@@ -101,11 +103,11 @@ export function mapInit() {
                 flagClick = true;
             })
 
-            document.getElementById('map2').addEventListener('click', function() {
-                document.getElementById('map2').classList.add('active');
-                document.getElementById('map1').classList.remove('active');
-                document.getElementById('map2').classList.remove('unactive');
-                document.getElementById('map1').classList.add('unactive');
+            map2.addEventListener('click', function() {
+                map2.classList.add('active');
+                map1.classList.remove('active');
+                map2.classList.remove('unactive');
+                map1.classList.add('unactive');
                 myGeoObjects[0].options.set("iconImageSize", [32, 32]);
                 myGeoObjects[0].options.set("iconImageHref", './img/pin.svg');
                 myGeoObjects[1].options.set("iconImageSize", [40, 40]);
