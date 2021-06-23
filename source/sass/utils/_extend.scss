@@ -763,3 +763,57 @@ table {
         }
     }
 }
+// TODO: rename classes
+.fl_upld {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+#fl_inp {
+    display:none;
+}
+
+.fl_upld label {
+    border-radius:3px;
+    padding: 0 5px;
+    color: #012561;
+    text-align: center;
+    transition: .3s;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    img {
+        margin-right: 6px;
+    }
+}
+
+.fl_upld label:hover {
+    opacity: 0.5;
+}
+
+.file-preview {
+    width: 95px;
+    height: 65px;
+    object-fit: cover;
+}
+.file-preview__wrapper {
+    position: relative;
+}
+.remove-button {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-grey;
+    transition: $transition-speed;
+    top: 0;
+    right: 0;
+    width: 21px;
+    height: 21px;
+    &:hover {
+        background-color: $color-red;
+    }
+}
