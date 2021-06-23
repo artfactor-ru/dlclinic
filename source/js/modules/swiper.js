@@ -52,12 +52,13 @@ if (document.querySelector('.swiper-container--anim1')) {
 
 // Маленький слайдеры в до после
 let smallSlider = [];
-document.querySelectorAll('.news__img-wrap--slider').forEach((element) => {
-    let slider = element.querySelector('.swiper-container--small');
-    let next = element.querySelector('.swiper-button-next');
-    let prev = element.querySelector('.swiper-button-prev');
+document.querySelectorAll('.news__img-wrap--slider').forEach((element, index) => {
 
-    let pagination = element.querySelector('.swiper-pagination--small');
+    const slider = element.querySelector('.swiper-container--small');
+    const next = element.querySelector(' .news__img-wrap swiper-button-next');
+    const prev = element.querySelector(' .news__img-wrap swiper-button-prev');
+
+    const pagination = element.querySelector('.swiper-pagination--small');
     smallSlider = new Swiper(slider, {
         loop: true,
         spaceBetween: 0,
@@ -135,7 +136,7 @@ document.querySelectorAll('.swiper-container--video').forEach((element) => {
 
 const beforeAfterSlider = document.querySelector('.before-after__slider');
 const beforeAfterSwiper = new Swiper(beforeAfterSlider, {
-    loop: true,
+    loop: false,
     spaceBetween: 0,
     navigation: {
         nextEl: '.before-after__wrapper .swiper-button-next',
@@ -147,7 +148,7 @@ const beforeAfterSwiper = new Swiper(beforeAfterSlider, {
 
 const reviewsSlider = document.querySelector('.reviews__slider');
 const reviewsSwiper = new Swiper(reviewsSlider, {
-    loop: true,
+    loop: false,
     spaceBetween: 0,
     navigation: {
         nextEl: '.reviews__wrapper .swiper-button-next',
