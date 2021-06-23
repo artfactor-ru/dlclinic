@@ -1,6 +1,7 @@
 .others {
     h2 {
         display: none;
+        margin-top: 40px;
         @include tablets {
             display: block;
         }
