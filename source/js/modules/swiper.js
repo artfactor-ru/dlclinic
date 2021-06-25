@@ -60,7 +60,7 @@ document.querySelectorAll('.news__img-wrap--slider').forEach((element, index) =>
 
     const pagination = element.querySelector('.swiper-pagination--small');
     smallSlider = new Swiper(slider, {
-        loop: true,
+        loop: false,
         spaceBetween: 0,
         navigation: {
             nextEl: next,

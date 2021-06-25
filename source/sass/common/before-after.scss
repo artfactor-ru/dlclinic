@@ -86,7 +86,7 @@
         left: 0;
     }
 }
-.news__slider {
+.news__slider .swiper-slide:first-of-type {
     position: relative;
     &:before {
         content: 'до';
