@@ -85,6 +85,7 @@ document.querySelectorAll('.swiper-container--promo').forEach((element) => {
     promoSlider = new Swiper(element, {
         loop: true,
         spaceBetween: 10,
+        speed: 1000,
         navigation: {
             nextEl: '.swiper-centered-wrapper--promo .swiper-button-next',
             prevEl: '.swiper-centered-wrapper--promo .swiper-button-prev',
@@ -138,6 +139,7 @@ const beforeAfterSlider = document.querySelector('.before-after__slider');
 const beforeAfterSwiper = new Swiper(beforeAfterSlider, {
     loop: false,
     spaceBetween: 0,
+    speed: 1000,
     navigation: {
         nextEl: '.before-after__wrapper .swiper-button-next',
         prevEl: '.before-after__wrapper .swiper-button-prev',
