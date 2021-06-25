@@ -46,6 +46,7 @@
         "node-normalize-scss": "^8.0.1",
         "posthtml-include": "^1.2.0",
         "run-sequence": "^2.2.1",
+        "vanilla-js-dropdown": "^2.2.0",
         "vinyl-buffer": "^1.0.1",
         "vinyl-source-stream": "^2.0.0",
         "webpack-stream": "^5.2.1"

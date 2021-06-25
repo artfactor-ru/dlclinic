@@ -10,6 +10,7 @@ import * as inputFile from './modules/inputFile.js';
 import { mapInit } from './modules/map.js';
 
 import 'lazysizes';
+import CustomSelect from 'vanilla-js-dropdown';
 
 var $ = require("jquery");
 window.jQuery = $;
@@ -17,6 +18,26 @@ window.jQuery = $;
 var fancybox = require("@fancyapps/fancybox");
 
 import Masonry from 'masonry-layout'
+
+// dropdown for select
+
+const select = new CustomSelect({
+    elem: "input-select",  // id of the original select element
+});
+
+// Open the select
+select.open();
+
+const isSelected = document.querySelector('.is-selected');
+if(isSelected) {
+    isSelected.classList.remove('is-selected');
+}
+
+const selectButton = document.querySelector('.js-Dropdown-title');
+const placeHolderText = document.querySelector('#input-select').getAttribute('placeholder');
+if(selectButton && placeHolderText) {
+    selectButton.innerText = placeHolderText;
+};
 
 // Определение тач устройств
 const breakpointMobile = window.matchMedia('(min-width:1180px)');

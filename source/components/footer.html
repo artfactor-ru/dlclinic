@@ -344,6 +344,51 @@
     </form>
 
 </div>
+
+<div class="form-popup" style="display: none;" id="popup-sign">
+    <h3 class="form-popup__title">Записаться на прием</h3>
+    <p class="form-popup__desc">Оставьте свои контактные данные и мы свяжемся с Вами, чтобы уточнить дату и время приема.</p>
+
+    <form action="faq.html" method="post" novalidate>
+        <label class="input-label">
+            <span class="input-placeholder">Ваше имя*</span>
+            <input class="input" type="text" required minlength="3" title="Поле должно содержать минимум 3 символа" >
+        </label>
+        <label class="input-label">
+            <span class="input-placeholder">Ваш телефон*</span>
+            <input class="input" type="tel" title="Неверный формат номера" required>
+        </label>
+        <label class="input-label">
+            <span class="input-placeholder">Ваш e-mail</span>
+            <input class="input" type="email" title="Неверный формат e-mail">
+        </label>
+
+        <label class="select-label">
+            <span>Специалист</span>
+            <select id="input-select" name="specialist" placeholder="Выберите специалиста">
+                <option value="unknown">Не знаю, к какому специалисту</option>
+                <option value="cherevko1">Черевко Н.И, Врач-стоматолог</option>
+                <option value="cherevko2">Черевко Н.И, Врач-стоматолог</option>
+            </select>
+        </label>
+        <label class="input-label">
+            <span class="input-placeholder">Комментарий</span>
+            <textarea class="input input--text" minlength="0" title="Оставьте Ваш комментарий"></textarea>
+        </label>
+
+
+        <label class="input-label input-label--check">
+            <input class="input checkbox" type="checkbox" name="" id="licenses4" required checked title="Поле обязательное для заполнения">
+            <label for="licenses4" class="label-checkbox">
+                Я согласен с <a href="">условиями обработки персональных данных</a>
+            </label>
+        </label>
+
+        <button type="submit" class="input-submit"><span>Отправить</span></button>
+
+    </form>
+</div>
+
 <div class="form-popup" style="display: none;" id="popup-review">
     <h3 class="form-popup__title">Оставить отзыв</h3>
     <p class="form-popup__desc">Мы всегда стремимся предлагать лучшее нашим пациентам. Будем рады получить Ваш отзыв.</p>
