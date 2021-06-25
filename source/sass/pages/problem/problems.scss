@@ -99,16 +99,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 45%;
-    }
-    @include laptop {
-        width: 38%;
-    }
-}
-
-.problems__desc .button:last-child {
-    @include laptop {
-        width: 42%;
+        padding: 18px;
+        box-sizing: border-box;
+        width: 365px;
     }
 }
 
