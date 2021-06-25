@@ -10,16 +10,15 @@
     @include laptop {
         content: "";
         position: absolute;
-        width: 285px;
-        height: 195px;
+        width: 327px;
+        height: 216px;
         background-image: url(../img/logo-transp.svg);
         background-repeat: no-repeat;
-        background-position: left bottom;
-        background-size: 100%;
-        left: 5px;
-        bottom: 20px;
-        z-index: 1000;
-        // background-color: #ffffff;
+        background-position: 2px 1px;
+        background-size: cover;
+        left: 0;
+        top: 0;
+        z-index: 1;
     }
     @include desktop {
         bottom: 25px;
@@ -37,6 +36,7 @@
     position: relative;
     padding: 25px;
     margin-top: 45px;
+    z-index: 2;
     @include tablets {
         flex-direction: row;
         justify-content: space-between;
@@ -57,7 +57,7 @@
         margin-top: -60px;
     }
     @include laptop {
-        margin-bottom: 55px;
+        margin-bottom: 25px;
         width: 25%;
     }
 }
@@ -107,6 +107,8 @@
 }
 
 .button--promo {
+    position: relative;
+    z-index: 3;
     transform: translateY(-20px);
     @include laptop {
         transform: translateY(-25px);
