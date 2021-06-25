@@ -180,7 +180,7 @@
 .news__article table tr td:nth-child(3) {
     text-decoration: line-through;
     white-space: nowrap;
-    padding-left: 5px;
+    padding-left: 15px;
 }
 
 .news__article table tfoot td {
@@ -216,6 +216,7 @@
     display: block;
     margin-top: 5px;
     @include laptop {
+        margin-top: 20px;
         font-size: 16px;
         line-height: 24px;
     }
