@@ -44,13 +44,12 @@
 }
 
 .load .swiper-slide {
-    transition: opacity 1s linear 0.2s!important;
+    transition: opacity 1.5s ease-in-out !important;
 }
 
-.load .swiper-slide-active {
-    transition: opacity 1s linear 1.2s!important;
-}
-
+// .load .swiper-slide-active {
+//     transition: opacity 0.5s linear !important;
+// }
 .inner-banner__wrap {
     background: rgba(255, 255, 255, 0.8);
     width: 100%;
@@ -234,6 +233,6 @@
     }
 }
 
-.swiper-container-initialized.swiper-container--banner .swiper-wrapper {
-    transition: $transition!important;
-}
+// .swiper-container-initialized.swiper-container--banner .swiper-wrapper {
+//     transition: $transition!important;
+// }

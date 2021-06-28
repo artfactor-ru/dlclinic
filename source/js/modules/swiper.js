@@ -37,6 +37,9 @@ if (document.querySelector('.swiper-container--anim1')) {
             prevEl: '.swiper-button-prev',
         },
         grabCursor: true,
+        autoplay: {
+            delay: 5000,
+        },
         // autoHeight: true,
         centeredSlides: true,
         slidesPerView: '1',
@@ -161,7 +164,7 @@ const reviewsSwiper = new Swiper(reviewsSlider, {
 })
 
 const certificateItems = document.querySelectorAll('.certificates__slider .swiper-slide');
-if(certificateItems) {
+if (certificateItems) {
     certificateItems.forEach((elem) => {
         elem.style.width = elem.querySelector('img').width + 'px';
     })
