@@ -111,6 +111,8 @@
         border: 1px solid #FFFFFF;
         color: #FFFFFF;
         padding: 4px 10px;
+        text-align: center;
+        display: block;
         margin-right: 15px;
         margin-bottom: 20px;
         &:not(.current):hover {
