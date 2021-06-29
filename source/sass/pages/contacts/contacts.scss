@@ -7,7 +7,7 @@
         }
     }
     &__row {
-        @include desktop {
+        @include laptop {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -27,7 +27,13 @@
         @include tablets {
             width: 50%;
             margin: 0;
+            max-width: 365px;
             margin-right: 40px;
+        }
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
     &__item {
@@ -62,24 +68,12 @@
         margin-bottom: 5px;
         color: $color-light-blue;
     }
-    h2 {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 30px;
+    h3 {
         margin: 1em 0;
-        @include tablets {
-            font-size: 28px;
-            line-height: 30px;
-        }
-        @include laptop {
-            font-size: 32px;
-            line-height: 36px;
-        }
     }
     &__how-to-get {
         margin-top: 10px;
-        h2 {
+        h3 {
             margin-top: 0;
         }
         p {
@@ -90,13 +84,17 @@
         flex-shrink: 0;
         height: 560px;
         margin-top: 10px;
+        @include laptop {
+            width: 50%;
+            margin-left: 40px;
+        }
         @include desktop {
             margin-left: 40px;
             width: 50%;
         }
     }
     &__buttons {
-        @include tablets {
+        @include laptop {
             display: flex;
             justify-content: space-between;
         }
@@ -108,9 +106,6 @@
             padding: 20px;
             width: 100%;
             line-height: 30px;
-            @include tablets {
-                width: auto;
-            }
             @include laptop {
                 max-width: 32%;
                 width: 100%;
