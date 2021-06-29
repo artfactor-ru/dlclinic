@@ -166,7 +166,7 @@ if (certificateItems) {
 }
 
 let certificatesSwiper;
-if (document.querySelector('.certificates__slider');) {
+if (document.querySelector('.certificates__slider')) {
     certificatesSwiper = new Swiper('.certificates__slider', {
         navigation: {
             nextEl: '.certificates__wrapper .swiper-button-next',

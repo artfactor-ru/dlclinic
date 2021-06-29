@@ -131,7 +131,7 @@
     width: 100%;
     border-collapse: collapse;
     @include laptop {
-        margin-top: 35px;
+        margin-top: 30px;
     }
 }
 
@@ -185,6 +185,7 @@
 
 .news__article table tfoot td {
     padding-bottom: 5px;
+    border-bottom: none;
     padding-top: 5px !important;
     @include tablets {
         padding-bottom: 15px;
@@ -216,7 +217,7 @@
     display: block;
     margin-top: 5px;
     @include laptop {
-        margin-top: 20px;
+        margin-top: 10px;
         font-size: 16px;
         line-height: 24px;
     }

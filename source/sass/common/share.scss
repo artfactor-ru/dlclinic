@@ -23,7 +23,8 @@
         margin-right: 12px;
         font-size: 14px;
         line-height: 24px;
-        transition: transform 1s linear;
+        transition: transform 1s linear, color 0.5s ease-in-out;
+        cursor: pointer;
         @include tablets {
             font-size: 18px;
             line-height: 22px;
@@ -65,13 +66,25 @@
             transition: $transition-speed;
         }
     }
-    &:hover svg path {
-        fill: $color-light-grey;
-    }
+    // &:hover svg path {
+    //     fill: $color-light-grey;
+    // }
+}
+
+.share:hover .share__btn svg path {
+    fill: $color-light-grey;
+}
+
+.share:hover .share__text {
+    color: $color-light-grey;
 }
 
 .active .share__btn {
     opacity: 0;
+}
+
+.active .share__text {
+    color: $color-grey !important;
 }
 
 .share__list {
