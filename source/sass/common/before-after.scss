@@ -86,29 +86,7 @@
         left: 0;
     }
 }
-.news__slider .swiper-slide:first-of-type {
-    position: relative;
-    &:before {
-        content: 'до';
-        position: absolute;
-        bottom: 14px;
-        left: 15px;
-        display: block;
-        font-size: 18px;
-        color: #ffffff;
-        z-index: 9;
-    }
-    &:after {
-        content: 'после';
-        position: absolute;
-        bottom: 14px;
-        right: 15px;
-        display: block;
-        font-size: 18px;
-        color: #ffffff;
-        z-index: 9;
-    }
-}
+
 .news__img-wrap {
     margin-bottom: 40px;
     @media (min-width: 1024px) {
