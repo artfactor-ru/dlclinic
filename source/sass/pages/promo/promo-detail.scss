@@ -10,18 +10,19 @@
     @include laptop {
         content: "";
         position: absolute;
-        width: 327px;
-        height: 216px;
+        width: 285px;
+        height: 195px;
         background-image: url(../img/logo-transp.svg);
         background-repeat: no-repeat;
-        background-position: 2px 1px;
-        background-size: cover;
-        left: 0;
-        top: 0;
-        z-index: 1;
+        background-position: left bottom;
+        background-size: 100%;
+        left: 2px;
+        bottom: 17px;
+        z-index: 1000;
+        // background-color: #ffffff;
     }
     @include desktop {
-        bottom: 25px;
+        bottom: 17px;
     }
 }
 
