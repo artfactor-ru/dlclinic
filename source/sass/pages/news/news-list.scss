@@ -45,6 +45,13 @@
     }
 }
 
+.news__img-wrap--slider {
+    margin-bottom: 30px;
+    @include laptop {
+        margin-bottom: 0;
+    }
+}
+
 .news__slider {
     width: 100%;
     max-width: 100%;
@@ -103,4 +110,10 @@
         margin-top: auto;
     }
     z-index: 2;
+}
+
+.video-link {
+    display: block;
+    position: relative;
+    @include video-link;
 }
