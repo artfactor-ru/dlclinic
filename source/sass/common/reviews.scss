@@ -1,4 +1,5 @@
 .reviews {
+    padding: 0;
     h2 {
         font-style: normal;
         font-weight: normal;
@@ -23,31 +24,35 @@
             padding: 40px 0;
         }
     }
-    .swiper-button-next {
-        right: 0;
-        @include laptop {
-            right: -40px;
-        }
-        &:hover {
-            transform: translateX(5px)
-        }
-    }
     .swiper-button-prev {
-        left: 0;
+        left: -25px;
+        @include tablets {
+            left: -30px;
+        }
         @include laptop {
+            left: -30px;
+        }
+        @include desktop {
             left: -40px;
         }
-        &:hover {
-            transform: translateX(-5px)
+    }
+    .swiper-button-next {
+        right: -25px;
+        @include tablets {
+            right: -30px;
+        }
+        @include laptop {
+            right: -30px;
+        }
+        @include desktop {
+            right: -40px;
         }
     }
     .swiper-button-next,
     .swiper-button-prev {
-        top: 15%;
+        // top: 15%;
         transition: $transition-speed;
-        @include laptop {
-            top: 50%;
-        }
+        top: 50%;
     }
     .swiper-button-next:after,
     .swiper-button-prev:after {
@@ -63,14 +68,18 @@
             flex-direction: row;
         }
         a {
+            max-height: 340px;
             img {
                 width: 100%;
                 object-fit: cover;
                 z-index: 1;
+                @include tablets {
+                    position: absolute;
+                }
             }
             @include tablets {
                 position: relative;
-                flex-basis: 25%;
+                flex-basis: 28%;
                 flex-shrink: 0;
                 max-height: 340px;
                 margin-right: 5%;

@@ -735,7 +735,7 @@ p {
     opacity: 0.5;
 }
 
- .table {
+.table {
     border-collapse: collapse;
     width: 100%;
     thead {
@@ -763,6 +763,7 @@ p {
         }
     }
 }
+
 // TODO: rename classes
 .fl_upld {
     display: flex;
@@ -771,11 +772,11 @@ p {
 }
 
 #fl_inp {
-    display:none;
+    display: none;
 }
 
 .fl_upld label {
-    border-radius:3px;
+    border-radius: 3px;
     padding: 0 5px;
     color: #012561;
     text-align: center;
@@ -798,9 +799,11 @@ p {
     height: 65px;
     object-fit: cover;
 }
+
 .file-preview__wrapper {
     position: relative;
 }
+
 .remove-button {
     display: none;
     cursor: pointer;
