@@ -1,11 +1,13 @@
 // Валидация телефона
 
+
+
 function telValidation() {
 
     function InputMask(options) {
         this.el = this.getElement(options.selector);
         if (!this.el) return console.log('Что-то не так с селектором');
-        this.layout = options.layout || '+_ (___) ___-__-__';
+        this.layout = options.layout || '+7 (___) ___-__-__';
         this.maskreg = this.getRegexp();
 
         this.setListeners();
@@ -64,7 +66,7 @@ function telValidation() {
                 this.style.border = "1px solid #de4145";
 
             } else {
-                this.style.border = " 1px solid #149F97";
+                this.style.border = " 1px solid #3A4047";
             }
         });
     }
@@ -112,53 +114,74 @@ function prevent(evt) {
 let forms = document.querySelectorAll('form');
 forms.forEach((form) => {
     let inputwrap = form.querySelectorAll('.input-label');
+    let btnSubmit = form.querySelector('.input-submit');
 
-    inputwrap.forEach((element) => {
+    let flagMadeValidation = false;
 
-        let input = element.querySelector('.input');
+    function inputValidation() {
 
-        let validMessage = "";
+        inputwrap.forEach((element) => {
 
-        let messageError = document.createElement('div');
-        messageError.className = "alert";
+            let input = element.querySelector('.input');
 
+            let validMessage = "";
 
-        function inputValidation() {
+            let messageError = document.createElement('div');
+            messageError.className = "alert";
             if (!input.checkValidity()) {
+
                 if (!input.value) {
-                    validMessage = "Поле обязательное для заполнение";
+                    validMessage = "Поле обязательно для заполнения";
                     element.classList.add('error');
                     messageError.innerHTML = validMessage;
                     element.append(messageError)
+
                 } else {
-                    validMessage = input.title;
+                    validMessage = input.dataset.title;
 
                     element.classList.add('error');
                     messageError.innerHTML = validMessage;
                     element.append(messageError)
+
                 }
 
-                form.addEventListener('submit', prevent)
+                if (form.querySelector('.error')) {
+                    form.addEventListener('submit', prevent)
 
+                    btnSubmit.addEventListener('submit', prevent)
+
+                }
 
             } else {
-
-
                 element.classList.remove('error');
                 if (element.querySelector('.alert')) {
                     element.querySelector('.alert').remove();
                 }
+                if (!form.querySelector('.error')) {
 
-                form.removeEventListener('submit', prevent)
+
+                    btnSubmit.removeEventListener('submit', prevent)
+
+                    form.removeEventListener('submit', prevent)
+                }
 
             }
-        }
+        })
+    }
+    if (btnSubmit) {
+        btnSubmit.addEventListener('click', function() {
+            inputValidation()
+            flagMadeValidation = true;
+        })
+    }
 
-        input.addEventListener('blur', inputValidation)
 
-        input.addEventListener('keydown', inputValidation)
-
-
-
-    })
+    inputwrap.forEach((element) => {
+        let input = element.querySelector('.input');
+        input.addEventListener('blur', function() {
+            if (flagMadeValidation) {
+                inputValidation()
+            }
+        })
+    });
 })

@@ -91,6 +91,13 @@ $('[data-fancybox]').fancybox({
         // parentEl: ".fancybox-container", // Container is injected into this element
         axis: "y" // Vertical (y) or horizontal (x) scrolling
     },
+    youtube: {
+        controls: 1,
+        showinfo: 0
+    },
+    vimeo: {
+        color: 'f00'
+    }
 
 });
 
@@ -250,7 +257,7 @@ let frame = document.querySelectorAll('.frame3d__wrap');
 for (let i = 0; i < frame.length; i++) {
 
     frame[i].addEventListener('click', function() {
-        frame[i].querySelector('iframe').style.pointerEvents = "auto";
+        frame[i].querySelector('.frame3d iframe').style.pointerEvents = "auto";
     })
 }
 
