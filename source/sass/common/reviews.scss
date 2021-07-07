@@ -19,25 +19,36 @@
             padding: 50px 0;
         }
     }
+    .review__desc {
+        display: none;
+        @media(min-width: 1024px) {
+            display: block;
+        }
+    }
     .review__item.swiper-slide {
-        @include tablets {
+        @media(min-width: 1024px) {
             flex-direction: row;
         }
         a {
-            max-height: 340px;
+            height: 49vw;
             img {
                 width: 100%;
                 object-fit: cover;
+                object-position: top;
                 z-index: 1;
                 height: 100%;
-                @include tablets {
+                @media(min-width: 1024px) {
                     position: absolute;
+                    top: 0;
+                    height: 100%;
                 }
             }
-            @include tablets {
+            @media(min-width:1024px) {
                 position: relative;
-                flex-basis: 28%;
+                // flex-basis: 28%;
                 flex-shrink: 0;
+                height: auto;
+                width: 420px;
                 max-height: 340px;
                 min-height: 240px;
                 margin-right: 5%;

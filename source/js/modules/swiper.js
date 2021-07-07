@@ -3,9 +3,11 @@ import Swiper, { Scrollbar, Thumbs, Navigation, EffectCoverflow, Pagination, Eff
 Swiper.use([Scrollbar, Thumbs, EffectFade, EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel, Keyboard, Lazy]);
 
 function updateSlider(slider) {
+
     if (slider != undefined) {
         if (Array.isArray(slider)) {
-            if (slider.length != 0) {
+
+            if ((slider.length != 0) || (slider.length != undefined)) {
 
                 for (let i = 0; i < slider.length; i++) {
                     slider[i].update();
@@ -22,8 +24,8 @@ function updateSlider(slider) {
 
 // Баннеры с центрируемой картинкой
 let swiperCentered = [];
-document.querySelectorAll('.swiper-container--centered').forEach((element) => {
-    swiperCentered = new Swiper(element, {
+document.querySelectorAll('.swiper-container--centered').forEach((element, index) => {
+    swiperCentered[index] = new Swiper(element, {
         loop: true,
         spaceBetween: 0,
         navigation: {
@@ -70,64 +72,100 @@ if (document.querySelector('.swiper-container--anim1')) {
 
 }
 
-
-// Маленький слайдеры в до после
-let smallSlider = [];
-document.querySelectorAll('.news__img-wrap--slider').forEach((element, index) => {
-
-    const slider = element.querySelector('.swiper-container--small');
-    const next = element.querySelector('.news__img-wrap swiper-button-next');
-    const prev = element.querySelector('.news__img-wrap swiper-button-prev');
-    const pagination = element.querySelector('.swiper-pagination--small');
-
-
-    smallSlider = new Swiper(slider, {
-        loop: false,
-        speed: 1500,
-        spaceBetween: 0,
-        navigation: {
-            nextEl: next,
-            prevEl: prev,
-        },
-        pagination: {
-            el: pagination,
-            clickable: true,
-        },
-
-        // effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: '1',
-
-    });
-})
-
 // Все простые слайдеры как до после , отзывы
 let innerSlider = [];
-document.querySelectorAll('.slider__inner').forEach((element) => {
+document.querySelectorAll('.slider__inner').forEach((element, index) => {
     const container = element.querySelector('.swiper-container');
     const prev = element.querySelector('.swiper-button-prev');
     const next = element.querySelector('.swiper-button-next');
 
-    innerSlider = new Swiper(container, {
+    innerSlider[index] = new Swiper(container, {
         // loop: true,
         speed: 1500,
         spaceBetween: 10,
+        // autoHeight: true,
         navigation: {
             nextEl: next,
             prevEl: prev,
         },
-        grabCursor: true,
+        // grabCursor: true,
         slidesPerView: '1',
 
     });
 })
 
 
+function setMainSwiperMouseOver() {
+
+    innerSlider.forEach((element) => {
+        element.detachEvents();
+    })
+
+}
+
+function setMainSwiperMouseOut() {
+    innerSlider.forEach((element) => {
+        element.attachEvents();
+    })
+
+}
+
+
+// setTimeout(function() {
+
+// Маленький слайдеры в до после
+let smallSlider = [];
+
+
+document.querySelectorAll('.news__img-wrap--slider').forEach((element, index) => {
+
+        const slider = element.querySelector('.swiper-container--small');
+        const next = element.querySelector('.news__img-wrap swiper-button-next');
+        const prev = element.querySelector('.news__img-wrap swiper-button-prev');
+        const pagination = element.querySelector('.swiper-pagination--small');
+
+
+        smallSlider[index] = new Swiper(slider, {
+            loop: false,
+            speed: 1500,
+            // init: false,
+            spaceBetween: 0,
+            navigation: {
+                nextEl: next,
+                prevEl: prev,
+            },
+            pagination: {
+                el: pagination,
+                clickable: true,
+            },
+
+            // effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: '1',
+
+        });
+
+
+        element.addEventListener('mouseover', setMainSwiperMouseOver);
+        element.addEventListener('mouseout', setMainSwiperMouseOut);
+
+
+    })
+    // }, 10)
+
+
+
+
+
+
+
+
+
 // Слайдер в технологии с видео
 let videoSlider = [];
-document.querySelectorAll('.swiper-container--video').forEach((element) => {
-    videoSlider = new Swiper(element, {
+document.querySelectorAll('.swiper-container--video').forEach((element, index) => {
+    videoSlider[index] = new Swiper(element, {
         loop: true,
         spaceBetween: 0,
         navigation: {
@@ -158,16 +196,6 @@ document.querySelectorAll('.swiper-container--video').forEach((element) => {
 
 
 
-// const certificateItems = document.querySelectorAll('.certificates__slider .swiper-slide');
-// if (certificateItems) {
-//     certificateItems.forEach((elem) => {
-//         elem.querySelector('img').addEventListener('load', function() {
-//             elem.style.width = elem.querySelector('img').width + 'px';
-//         })
-
-//     })
-// }
-
 let certificatesSwiper;
 if (document.querySelector('.certificates__slider')) {
     certificatesSwiper = new Swiper('.certificates__slider', {
@@ -179,8 +207,16 @@ if (document.querySelector('.certificates__slider')) {
         // loop: true,
         grabCursor: true,
         freeMode: true,
-        slidesPerView: 'auto',
+        slidesPerView: '1',
         spaceBetween: 30,
+        breakpoints: {
+
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 'auto',
+                spaceBetween: 20
+            }
+        },
     })
 }
 
@@ -219,7 +255,7 @@ if (document.querySelector('.swiper-container--three-el .swiper-container')) {
 window.addEventListener('resize', function() {
     updateSlider(swiperCentered)
     updateSlider(swiperBanner)
-    updateSlider(smallSlider)
+        // updateSlider(smallSlider)
     updateSlider(innerSlider)
     updateSlider(videoSlider)
     updateSlider(certificatesSwiper)

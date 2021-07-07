@@ -1,0 +1,56 @@
+<!-- Шапка и меню -->
+<include src="components/header.html"></include>
+
+<main>
+
+    <include src="components/banner-inner.html"></include>
+
+    <section class="block-light block-inner">
+        <div class="container">
+
+            <include src="components/breadcrumbs.html" locals='{
+                "text": "Документы"
+            }'></include>
+
+            <h1>Документы</h1>
+
+
+            <ul class="doc__list">
+                <li class="doc__item">
+                    <a class="doc__link doc__link--pdf" href="">Лицензия на медицинскую деятельность.pdf</a>
+                </li>
+                <li class="doc__item">
+                    <a class="doc__link doc__link--pdf" href="">Список контролирующих организаций.pdf</a>
+                </li>
+                <li class="doc__item">
+                    <a class="doc__link doc__link--pdf" href="">Правила предоставления платных медицинских услуг.pdf</a>
+                </li>
+                <li class="doc__item">
+                    <a class="doc__link doc__link--pdf" href="">Сведения о врачах.pdf</a>
+                </li>
+                <li class="doc__item">
+                    <a class="doc__link doc__link--pdf" href="">Лицензия</a>
+                </li>
+                <li class="doc__item">
+                    <a class="doc__link doc__link--pdf" href="">Лицензия на медицинскую деятельность.pdf</a>
+                </li>
+            </ul>
+            <h2 class="doc__title">Правила использования сайта</h2>
+            <ul class="doc__list  doc__list--link">
+                <li class="doc__item">
+                    <a class="doc__link" href="">Согласие на обработку персональных данных</a>
+                </li>
+                <li class="doc__item">
+                    <a class="doc__link " href="">Пользовательское соглашение</a>
+                </li>
+                <li class="doc__item">
+                    <a class="doc__link " href="">Политика конфиденциальности</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+
+<!-- Футер -->
+<include src="components/footer.html"></include>

@@ -138,4 +138,15 @@
 
 .faq__text {
     margin-top: 30px;
+    width: 100%;
+    @include p-style;
+}
+
+.faq__text a {
+    color: $color-light-blue;
+    text-decoration: underline;
+    transition: $transition;
+    &:hover {
+        color: $color-light-grey;
+    }
 }

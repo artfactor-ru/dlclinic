@@ -160,14 +160,18 @@
 }
 
 .review__video {
-    height: 192px;
+    height: 48vw;
     width: 100%;
     object-fit: cover;
+    @media(min-width: 565px) {
+        height: 28vw;
+    }
     @include tablets {
-        height: 205px;
+        height: 28vw;
     }
     @include laptop {
-        height: 228px;
+        height: 18vw;
+        max-height: 310px;
     }
 }
 
