@@ -1,0 +1,33 @@
+.price__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.price__article {
+    width: 100%;
+    @include tablets {
+        width: 65%;
+    }
+}
+
+.price__sidebar {
+    width: 100%;
+    margin-top: 20px;
+    @include tablets {
+        margin-top: 0;
+        width: 30%;
+    }
+}
+
+.swiper-container--three-el__list {
+    @include list-destroy;
+}
+
+.swiper-container--three-el>h3 {
+    margin: 1em 0;
+}
+
+// .swiper-container--three-el__list .serv__item--promo {
+//     margin-right: 20px;
+// }

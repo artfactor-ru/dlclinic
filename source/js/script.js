@@ -8,7 +8,7 @@ import * as menu from './modules/menu.js';
 import * as validation from './modules/validation.js';
 import * as inputFile from './modules/inputFile.js';
 import { mapInit } from './modules/map.js';
-
+import * as accordion from './modules/accordion.js';
 import 'lazysizes';
 import CustomSelect from 'vanilla-js-dropdown';
 

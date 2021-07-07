@@ -24,6 +24,9 @@
     @include laptop {
         display: flex;
     }
+    & br {
+        display: none;
+    }
 }
 
 .breadcrumbs li:nth-last-child(2) {

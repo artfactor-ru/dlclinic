@@ -122,11 +122,14 @@
 
 .review__video {
     display: block;
+    width: 100%;
+    height: 100%;
     position: relative;
     opacity: 1 !important;
     &::after {
         content: "";
         position: absolute;
+        z-index: 5;
         width: 50px;
         height: 50px;
         background: url(../img/btn-play.svg);
@@ -147,6 +150,12 @@
             height: 75px;
             background-size: 75px 75px;
         }
+    }
+}
+
+.review__video-light {
+    &::after {
+        background-image: url(../img/btn-play-dark.svg);
     }
 }
 

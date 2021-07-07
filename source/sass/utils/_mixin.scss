@@ -178,6 +178,7 @@
     & h2 {
         @include block-title;
     }
+    & h1 {}
 }
 
 @mixin block-style3 {

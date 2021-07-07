@@ -28,6 +28,7 @@
     @import 'common/reviews';
     @import 'common/others';
     @import 'common/before-after';
+    @import 'common/accordion';
     // Услуги
     @import 'pages/services/serv';
     @import 'pages/services/serv-detail';
@@ -55,3 +56,7 @@
     @import 'pages/gallery/gallery';
     // Контакты
     @import 'pages/contacts/contacts';
+    // Детальная страница цен
+    @import 'pages/price-det/prices';
+    // Принципы
+    @import 'pages/principles/principles-footer';

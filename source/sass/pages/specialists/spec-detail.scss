@@ -1,6 +1,9 @@
 .specialist {
     h1 {
         margin-bottom: 20px;
+        & br {
+            display: none;
+        }
     }
     &__wrap {
         @include tablets {
@@ -22,14 +25,20 @@
             line-height: 36px;
             padding-top: 10px;
         }
+        & br {
+            display: none;
+        }
     }
     &__photo {
         flex-shrink: 0;
         margin-top: 40px;
         @include tablets {
-            max-width: 33%;
+            width: 33%;
             order: 2;
             margin-left: 40px;
+        }
+        & img {
+            width: 100%;
         }
     }
     p {
@@ -151,6 +160,9 @@
     &__item {
         display: flex;
         justify-content: center;
+    }
+    & .swiper-slide {
+        // width: auto !important;
     }
 }
 
