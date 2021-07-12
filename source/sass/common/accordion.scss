@@ -39,8 +39,17 @@
 }
 
 .accordion__item.active .accordion__title {
+    background-color: $color-grey;
+    padding-left: 10px;
+    color: #fff;
     & svg {
         transform: rotate(0deg);
+        & path {
+            fill: #fff;
+        }
+    }
+    @include laptop {
+        padding-left: 30px;
     }
 }
 

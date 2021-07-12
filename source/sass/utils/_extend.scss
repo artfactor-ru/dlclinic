@@ -692,6 +692,12 @@ p {
 }
 
 .flex-wrap--title {
+    & h3 {
+        margin-bottom: 20px;
+        @include laptop {
+            margin-bottom: 0;
+        }
+    }
     @include laptop {
         align-items: flex-start;
         margin-top: 30px;

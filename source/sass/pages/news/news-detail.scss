@@ -53,11 +53,23 @@
     }
 }
 
+.news__article h2:first-child {
+    margin-top: 0;
+}
+
 .news__article ul {
     @include list-destroy;
     list-style-type: "•";
     padding-left: 15px;
     margin-bottom: 30px;
+}
+
+.news__article ol {
+    @include list-destroy;
+}
+
+.news__article ol li {
+    margin-bottom: 20px;
 }
 
 .news__article ul li {

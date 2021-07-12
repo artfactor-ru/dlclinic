@@ -58,3 +58,15 @@
     display: block;
     margin-top: 0;
 }
+
+.doc__wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.doc__column {
+    width: 100%;
+    @include tablets {
+        width: 50%;
+    }
+}
