@@ -1,6 +1,6 @@
-import Swiper, { Scrollbar, Thumbs, Navigation, EffectCoverflow, Pagination, EffectFade, Autoplay, Mousewheel, Keyboard, Lazy } from 'swiper';
+import Swiper, { Scrollbar, Controller, A11y, Thumbs, Navigation, EffectCoverflow, Pagination, EffectFade, Autoplay, Mousewheel, Keyboard, Lazy } from 'swiper';
 
-Swiper.use([Scrollbar, Thumbs, EffectFade, EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel, Keyboard, Lazy]);
+Swiper.use([Scrollbar, Controller, A11y, Thumbs, EffectFade, EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel, Keyboard, Lazy]);
 
 function updateSlider(slider) {
 
@@ -248,120 +248,63 @@ if (document.querySelector('.swiper-container--three-el .swiper-container')) {
 
     })
 }
-// let swiperThumbs;
-// if (document.querySelector('.swiper-container--thumbs')) {
-//     swiperThumbs = new Swiper(".swiper-container--thumbs", {
-//         // loop: true,
-//         grabCursor: true,
-//         spaceBetween: 28,
-//         slidesPerView: 6,
-//         speed: 1500,
-//         slidesOffsetAfter: 200,
+let swiperThumbs;
 
-//         // observeSlideChildren: true,
-//         // centerInsufficientSlides: true,
-//         watchSlidesVisibility: true,
-//         watchSlidesProgress: true,
-//         // slideToClickedSlide: true,
+if (document.querySelector('.swiper-container--thumbs')) {
+    swiperThumbs = new Swiper(".swiper-container--thumbs", {
 
-//         breakpoints: {
+        grabCursor: true,
+        spaceBetween: 28,
+        slidesPerView: 4,
+        speed: 1500,
 
-//             // when window width is >= 480px
-//             768: {
-//                 slidesPerView: 10,
-//             },
-//             1024: {
-//                 slidesPerView: 10,
-//             },
-//             1180: {
-//                 slidesPerView: 11,
-//             },
-//             1380: {
-//                 slidesPerView: 15,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
 
-//             },
-//             // when window width is >= 640px
-//             1680: {
-//                 slidesPerView: 17,
+        breakpoints: {
+            768: {
+                slidesPerView: 10,
 
-//             }
-//         },
-//     });
+            },
+
+            1180: {
+                slidesPerView: 10,
+
+            },
+
+            1920: {
+                slidesPerView: 18,
+
+
+            }
+        },
+    });
 
 
 
-// }
+
+}
+
+
 let swiperHistory;
 if (document.querySelector('.swiper-container--history')) {
     swiperHistory = new Swiper(".swiper-container--history", {
-        // loop: true,
+
         grabCursor: true,
         spaceBetween: 10,
 
         speed: 1500,
 
         thumbs: {
-            autoScrollOffset: 3,
-            swiper: {
-                el: '.swiper-container--thumbs',
-                grabCursor: true,
-                spaceBetween: 28,
-                slidesPerView: 6,
-                speed: 1500,
-                freeMode: true,
-                watchSlidesVisibility: true,
-                watchSlidesProgress: true,
-                breakpoints: {
 
-                    // when window width is >= 480px
-                    768: {
-                        slidesPerView: 10,
-                    },
-                    1024: {
-                        slidesPerView: 10,
-                    },
-                    1180: {
-                        slidesPerView: 11,
-                    },
-                    1380: {
-                        slidesPerView: 11,
+            swiper: swiperThumbs,
 
-                    },
-                    // when window width is >= 640px
-                    1920: {
-                        slidesPerView: 15,
-
-                    }
-                },
-
-            },
         },
-        // breakpoints: {
-
-        //     // when window width is >= 480px
-        //     768: {
-        //         thumbs: {
-        //             autoScrollOffset: 4,
-
-        //         },
-        //     },
-        //     1024: {
-        //         thumbs: {
-        //             autoScrollOffset: 3,
-
-        //         },
-        //     },
-        //     1180: {
-        //         thumbs: {
-        //             autoScrollOffset: 2,
-
-        //         },
-        //     },
-
-
-        // },
 
     });
+
+
+
 }
 
 
