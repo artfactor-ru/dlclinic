@@ -15,7 +15,11 @@
     @include video-link;
 }
 
-.reviews__title{
+.reviews__link-light {
+    background-image: url(../img/btn-play-dark.svg);
+}
+
+.reviews__title {
     position: relative;
     z-index: 10;
     margin-top: auto;
@@ -23,6 +27,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 15px;
+    pointer-events: none;
     // color: #fff;
     @include tablets {
         padding: 20px;

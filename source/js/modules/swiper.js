@@ -1,6 +1,6 @@
-import Swiper, { Scrollbar, Controller, A11y, Thumbs, Navigation, EffectCoverflow, Pagination, EffectFade, Autoplay, Mousewheel, Keyboard, Lazy } from 'swiper';
+import Swiper, { Scrollbar, Controller, A11y, Thumbs, Navigation, EffectCoverflow, Pagination, EffectFade, Autoplay, Mousewheel, Keyboard, Lazy, HashNavigation } from 'swiper';
 
-Swiper.use([Scrollbar, Controller, A11y, Thumbs, EffectFade, EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel, Keyboard, Lazy]);
+Swiper.use([Scrollbar, Controller, A11y, Thumbs, EffectFade, EffectCoverflow, Pagination, Navigation, Autoplay, Mousewheel, Keyboard, Lazy, HashNavigation]);
 
 function updateSlider(slider) {
 
@@ -32,7 +32,7 @@ document.querySelectorAll('.swiper-container--centered').forEach((element, index
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        speed: 1500,
+        speed: 700,
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
@@ -83,7 +83,7 @@ document.querySelectorAll('.slider__inner').forEach((element, index) => {
         // loop: true,
         speed: 1500,
         spaceBetween: 10,
-        // autoHeight: true,
+        autoHeight: true,
         navigation: {
             nextEl: next,
             prevEl: prev,
@@ -197,28 +197,32 @@ document.querySelectorAll('.swiper-container--video').forEach((element, index) =
 
 
 let certificatesSwiper;
-if (document.querySelector('.certificates__slider')) {
-    certificatesSwiper = new Swiper('.certificates__slider', {
-        navigation: {
-            nextEl: '.certificates__wrapper .swiper-button-next',
-            prevEl: '.certificates__wrapper .swiper-button-prev',
-        },
-        speed: 1500,
-        // loop: true,
-        grabCursor: true,
-        freeMode: true,
-        slidesPerView: '1',
-        spaceBetween: 30,
-        breakpoints: {
 
-            // when window width is >= 480px
-            480: {
-                slidesPerView: 'auto',
-                spaceBetween: 20
-            }
-        },
-    })
-}
+imagesLoaded(document.querySelector('.certificates__slider'), function() {
+    if (document.querySelector('.certificates__slider')) {
+        certificatesSwiper = new Swiper('.certificates__slider', {
+            navigation: {
+                nextEl: '.certificates__wrapper .swiper-button-next',
+                prevEl: '.certificates__wrapper .swiper-button-prev',
+            },
+            speed: 1500,
+            // loop: true,
+            grabCursor: true,
+            freeMode: true,
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            breakpoints: {
+
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 20
+                }
+            },
+        })
+    }
+});
+
 
 let threeSwiper;
 if (document.querySelector('.swiper-container--three-el .swiper-container')) {
@@ -257,7 +261,11 @@ if (document.querySelector('.swiper-container--thumbs')) {
         spaceBetween: 28,
         slidesPerView: 4,
         speed: 1500,
-
+        // hashNavigation: {
+        //     // replaceState: true,
+        //     watchState: true,
+        // },
+        // centeredSlidesBounds: true,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
 
@@ -285,18 +293,26 @@ if (document.querySelector('.swiper-container--thumbs')) {
 
 }
 
-
 let swiperHistory;
 if (document.querySelector('.swiper-container--history')) {
     swiperHistory = new Swiper(".swiper-container--history", {
 
         grabCursor: true,
         spaceBetween: 10,
-
+        // freeMode: true,
         speed: 1500,
+        hashNavigation: {
+            // replaceState: true,
+            watchState: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next--history",
+            prevEl: ".swiper-button-prev--history",
+        },
+
 
         thumbs: {
-
+            // autoScrollOffset: 2,
             swiper: swiperThumbs,
 
         },
@@ -306,6 +322,7 @@ if (document.querySelector('.swiper-container--history')) {
 
 
 }
+
 
 
 window.addEventListener('resize', function() {

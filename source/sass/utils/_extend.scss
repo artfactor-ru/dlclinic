@@ -9,6 +9,8 @@ body {
     font-family: $font-main;
     color: #fff;
     overflow-x: hidden;
+    @include p-style;
+    text-size-adjust: 100%;
 }
 
 img {
@@ -38,7 +40,7 @@ p a:hover {
 .container {
     width: 100%;
     box-sizing: border-box;
-    padding: 0px 20px;
+    padding: 0px 30px;
     position: relative;
     @include tablets {
         padding: 0px 40px;
@@ -665,6 +667,8 @@ p {
 }
 
 .flex-wrap--center {
+    margin-top: 25px;
+    margin-bottom: 25px;
     @include tablets {
         flex-direction: column;
         align-items: center;
@@ -692,6 +696,7 @@ p {
 }
 
 .flex-wrap--title {
+    margin-top: 20px;
     & h3 {
         margin-bottom: 20px;
         @include laptop {
@@ -801,10 +806,17 @@ p {
     td {
         padding: 8px 10px;
         font-size: 14px;
-        border: 1px solid $color-light-grey;
+        border: 0.5px solid $color-light-grey;
         @include laptop {
             padding: 24px 30px;
             font-size: 18px;
+        }
+    }
+    td:last-child {
+        white-space: nowrap;
+        text-align: center;
+        @include laptop {
+            min-width: 230px;
         }
     }
 }
@@ -865,4 +877,16 @@ p {
     &:hover {
         background-color: $color-red;
     }
+}
+
+.swiper-slide {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.swiper-wrapper {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }

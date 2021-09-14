@@ -21,12 +21,12 @@
     }
     .review__desc {
         display: none;
-        @media(min-width: 1024px) {
+        @media(min-width: 880px) {
             display: block;
         }
     }
     .review__item.swiper-slide {
-        @media(min-width: 1024px) {
+        @media(min-width: 880px) {
             flex-direction: row;
         }
         a {
@@ -37,20 +37,19 @@
                 object-position: top;
                 z-index: 1;
                 height: 100%;
-                @media(min-width: 1024px) {
+                @media(min-width: 880px) {
                     position: absolute;
                     top: 0;
                     height: 100%;
                 }
             }
-            @media(min-width:1024px) {
+            @media(min-width:880px) {
                 position: relative;
                 // flex-basis: 28%;
                 flex-shrink: 0;
                 height: auto;
                 width: 420px;
-                max-height: 340px;
-                min-height: 240px;
+                height: 320px;
                 margin-right: 5%;
                 &:before {
                     content: '';

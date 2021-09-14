@@ -11,15 +11,27 @@
         text-decoration: none;
         color: #000 !important;
         position: absolute;
-        z-index: 3;
+        z-index: 20;
         font-weight: 500;
         bottom: -20px;
         @include laptop {
+            bottom: -25px;
             // transform: translateY(-25px);
         }
         & span {
-            margin: 0;
             font-weight: 500;
+            font-size: 18px;
+            line-height: 18px;
+            margin-top: 0;
+            @include tablets {
+                font-size: 18px;
+                line-height: 18px;
+            }
+            @include laptop {
+                font-size: 20px;
+                line-height: 32px;
+            }
+            @include desktop {}
         }
     }
     @include tablets {

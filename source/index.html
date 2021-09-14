@@ -252,17 +252,17 @@
                     <ul class="swiper-wrapper tech__list">
                         <li class="swiper-slide tech__item">
                             <a class="tech__link" href=""></a>
-                            <img class="lazyload" data-src="./img/tech/tech1.jpg" alt="" loading="lazy">
+                            <img class="lazyload" src="./img/tech/tech1.jpg" alt="" loading="lazy">
                             <h3 class="tech__title">Лечение зубов под микроскопом</h3>
                         </li>
                         <li class="swiper-slide tech__item">
                             <a class="tech__link" href=""></a>
-                            <img class="lazyload" data-src="./img/tech/tech1.jpg" alt="" loading="lazy">
+                            <img class="lazyload" src="./img/tech/tech1.jpg" alt="" loading="lazy">
                             <h3 class="tech__title">Лечение зубов под микроскопом</h3>
                         </li>
                         <li class="swiper-slide tech__item">
                             <a class="tech__link" href=""></a>
-                            <img class="lazyload" data-src="./img/tech/tech1.jpg" alt="" loading="lazy">
+                            <img class="lazyload" src="./img/tech/tech1.jpg" alt="" loading="lazy">
                             <h3 class="tech__title">Лечение зубов под микроскопом</h3>
                         </li>
                     </ul>
@@ -428,7 +428,7 @@
                 <div class="swiper-container swiper-container--centered">
                     <ul class="swiper-wrapper reviews__list">
                         <li class="swiper-slide reviews__item">
-                            <a class="reviews__link" href="./video/video-hero.mp4" data-fancybox></a>
+                            <a class="reviews__link reviews__link-light" href="./video/video-hero.mp4" data-fancybox></a>
                             <img data-src="./img/reviews.jpg" alt="" loading="lazy" class="lazyload">
                             <h3 class="reviews__title">Отзыв Надежды</h3>
                         </li>
@@ -499,8 +499,46 @@
     <section class="map map--animation1">
 
         <div class="map__column">
-            <img class="map__img lazyload unactive" id="map1" data-src="./img/map/clinic1.jpg" alt="" width="805" height="473" loading="lazy">
-            <img class="map__img lazyload active" id="map2" data-src="./img/map/clinic2.jpg" alt="" loading="lazy">
+
+            <div class="map__img unactive" id="map1">
+                <div class="contacts__data">
+                    <div class="contacts__item contacts__item--address">
+                        <div class="contacts__title">Адрес:</div>
+                        <span>Морской проспект, дом 15</span>
+                    </div>
+                    <div class="contacts__item contacts__item--phones">
+                        <div class="contacts__title">Телефон:</div>
+                        <a href="tel:+78122328825">(812) 232-88-25, </a>
+                        <a href="tel:+78123831966">(812) 383-19-66, </a>
+                        <a href="tel:+78122331908">(812) 233-19-08</a>
+                    </div>
+                    <div class="contacts__item contacts__item--schedule">
+                        <div class="contacts__title">Время работы:</div>
+                        <span>ПН-СБ с 9:00 до 21:00</span>
+                    </div>
+                </div>
+                <img class="lazyload " id="map1" data-src="./img/map/clinic1.jpg" alt="" loading="lazy">
+            </div>
+            <div class="map__img active first" id="map2">
+                <div class="contacts__data">
+                    <div class="contacts__item contacts__item--address">
+                        <div class="contacts__title">Адрес:</div>
+                        <span>Морской проспект, дом 15</span>
+                    </div>
+                    <div class="contacts__item contacts__item--phones">
+                        <div class="contacts__title">Телефон:</div>
+                        <a href="tel:+78122328825">(812) 232-88-25, </a>
+                        <a href="tel:+78123831966">(812) 383-19-66, </a>
+                        <a href="tel:+78122331908">(812) 233-19-08</a>
+                    </div>
+                    <div class="contacts__item contacts__item--schedule">
+                        <div class="contacts__title">Время работы:</div>
+                        <span>ПН-СБ с 9:00 до 21:00</span>
+                    </div>
+                </div>
+                <img class=" lazyload " data-src="./img/map/clinic2.jpg" alt="" loading="lazy">
+            </div>
+
         </div>
         <div class="map__column">
             <div id="yandexmapa"></div>

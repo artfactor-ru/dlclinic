@@ -37,6 +37,7 @@
     z-index: 3;
     margin-top: auto;
     padding: 15px;
+    pointer-events: none;
     @include tablets {
         padding: 20px;
     }
@@ -52,4 +53,19 @@
     background: linear-gradient(90deg, #131F2E 0%, rgba(2, 2, 2, 0) 60.49%);
     background-blend-mode: multiply, normal;
     opacity: 1 !important;
+}
+
+.price h5 {
+    border: 1px solid $color-grey;
+    background-color: $color-grey;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: left;
+    color: #ffffff;
+    @include laptop {
+        padding: 24px 30px;
+        font-size: 24px;
+    }
+    margin: 0;
 }

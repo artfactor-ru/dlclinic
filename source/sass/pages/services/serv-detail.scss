@@ -40,6 +40,11 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        @include tablets {
+            justify-content: flex-start;
+            margin-left: -1%;
+            margin-right: -1%;
+        }
     }
     &__item {
         display: flex;
@@ -52,9 +57,13 @@
         @include tablets {
             width: 48%;
             margin-bottom: 40px;
+            margin-left: 1%;
+            margin-right: 1%;
         }
         @include laptop {
             width: 23%;
+            margin-left: 1%;
+            margin-right: 1%;
             margin-bottom: 50px;
         }
     }

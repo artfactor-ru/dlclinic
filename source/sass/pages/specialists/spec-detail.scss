@@ -150,6 +150,10 @@
 
 .certificates {
     margin-top: 30px;
+    margin-bottom: 30px;
+    @include laptop {
+        margin-bottom: 0;
+    }
     & h3 {
         margin-bottom: 30px;
         // }
@@ -163,12 +167,25 @@
     &__wrapper {
         position: relative;
     }
+    .swiper-container {
+        height: 259px;
+    }
     &__item {
         display: flex;
         justify-content: center;
     }
     & .swiper-slide {
         max-width: 365px;
+        // width: auto !important;
+        height: 259px;
+        & a {
+            height: 100%;
+        }
+        & img {
+            width: auto;
+            height: 259px;
+            object-fit: cover;
+        }
         // width: auto !important;
     }
 }

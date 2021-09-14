@@ -99,6 +99,7 @@
 
 .burger-nav__item--main {
     margin-top: 35px;
+    pointer-events: none;
 }
 
 .burger-nav__close {
@@ -151,11 +152,11 @@
     display: block;
     position: fixed;
     pointer-events: none;
-    top: 66px;
+    top: 75px;
     left: 0;
     z-index: 1000;
     background-color: $color-light-grey;
-    height: calc(100vh - 66px);
+    height: calc(100vh - 75px);
     // height: 100vh;
     // height: calc(var(--vh, 1vh) * 100);
     transition: .3s all ease-out;
@@ -170,10 +171,10 @@
     padding-top: 5px;
     padding-bottom: 45px;
     @include tablets {
-        top: 62px;
+        top: 75px;
     }
     @include laptop {
-        top: 72px;
+        top: 75px;
     }
     @media(min-width: 1450px) {
         display: none;

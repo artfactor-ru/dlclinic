@@ -4,6 +4,7 @@
     font-weight: normal;
     margin-bottom: 10px;
     margin-top: 20px;
+    display: block;
     @include tablets {
         margin-top: 10px;
         margin-bottom: 18px;
@@ -65,7 +66,13 @@
 }
 
 .news__article ol {
-    @include list-destroy;
+    // @include list-destroy;
+    @include p-style;
+    padding: 20px;
+    @include tablets {
+        font-size: 18px;
+        line-height: 30px;
+    }
 }
 
 .news__article ol li {
@@ -276,16 +283,48 @@
     }
 }
 
-.news__article span {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 20px;
-    display: block;
-    margin-top: 5px;
-    @include laptop {
-        margin-top: 10px;
-        font-size: 16px;
-        line-height: 24px;
+.img--left {
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    @media(max-width: 780px) {
+        float: none;
+        width: 100%;
+        display: block;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }
+
+.news__article img {
+    @media(max-width: 780px) {
+        width: 100%;
+    }
+}
+
+.img--right {
+    float: right;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    @media(max-width: 780px) {
+        float: none;
+        width: 100%;
+        display: block;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+// .news__article span {
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 12px;
+//     line-height: 20px;
+//     display: inline-block;
+//     margin-top: 5px;
+//     @include laptop {
+//         margin-top: 10px;
+//         font-size: 16px;
+//         line-height: 24px;
+//     }
+// }

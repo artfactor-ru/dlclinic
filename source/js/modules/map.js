@@ -66,8 +66,11 @@ export function mapInit() {
             myGeoObjects[0].events.add('click', function(e) {
                 map2.classList.remove('active');
                 map1.classList.add('active');
+
                 map2.classList.add('unactive');
                 map1.classList.remove('unactive');
+
+                map2.classList.remove('first');
                 myGeoObjects[0].options.set("iconImageSize", [40, 40]);
                 myGeoObjects[0].options.set("iconImageHref", './img/pin-blue.svg');
                 myGeoObjects[1].options.set("iconImageSize", [32, 32]);
@@ -81,6 +84,7 @@ export function mapInit() {
                 map1.classList.remove('active');
                 map2.classList.remove('unactive');
                 map1.classList.add('unactive');
+                map2.classList.remove('first');
                 myGeoObjects[0].options.set("iconImageSize", [32, 32]);
                 myGeoObjects[0].options.set("iconImageHref", './img/pin.svg');
                 myGeoObjects[1].options.set("iconImageSize", [40, 40]);
@@ -90,31 +94,37 @@ export function mapInit() {
 
             });
 
-            map1.addEventListener('click', function() {
-                map2.classList.remove('active');
-                map1.classList.add('active');
-                map2.classList.add('unactive');
-                map1.classList.remove('unactive');
-                myGeoObjects[0].options.set("iconImageSize", [40, 40]);
-                myGeoObjects[0].options.set("iconImageHref", './img/pin-blue.svg');
-                myGeoObjects[1].options.set("iconImageSize", [32, 32]);
-                myGeoObjects[1].options.set("iconImageHref", './img/pin.svg');
+            if (map1) {
+                map1.addEventListener('click', function() {
+                    map2.classList.remove('active');
+                    map1.classList.add('active');
+                    map2.classList.add('unactive');
+                    map1.classList.remove('unactive');
+                    map2.classList.remove('first');
+                    myGeoObjects[0].options.set("iconImageSize", [40, 40]);
+                    myGeoObjects[0].options.set("iconImageHref", './img/pin-blue.svg');
+                    myGeoObjects[1].options.set("iconImageSize", [32, 32]);
+                    myGeoObjects[1].options.set("iconImageHref", './img/pin.svg');
 
-                flagClick = true;
-            })
+                    flagClick = true;
+                })
+            }
 
-            map2.addEventListener('click', function() {
-                map2.classList.add('active');
-                map1.classList.remove('active');
-                map2.classList.remove('unactive');
-                map1.classList.add('unactive');
-                myGeoObjects[0].options.set("iconImageSize", [32, 32]);
-                myGeoObjects[0].options.set("iconImageHref", './img/pin.svg');
-                myGeoObjects[1].options.set("iconImageSize", [40, 40]);
-                myGeoObjects[1].options.set("iconImageHref", './img/pin-blue.svg');
+            if (map2) {
+                map2.addEventListener('click', function() {
+                    map2.classList.add('active');
+                    map1.classList.remove('active');
+                    map2.classList.remove('unactive');
+                    map1.classList.add('unactive');
+                    map2.classList.remove('first');
+                    myGeoObjects[0].options.set("iconImageSize", [32, 32]);
+                    myGeoObjects[0].options.set("iconImageHref", './img/pin.svg');
+                    myGeoObjects[1].options.set("iconImageSize", [40, 40]);
+                    myGeoObjects[1].options.set("iconImageHref", './img/pin-blue.svg');
 
-                flagClick2 = true;
-            })
+                    flagClick2 = true;
+                })
+            }
 
             myGeoObjects[0].events.add('mouseenter', function() {
 

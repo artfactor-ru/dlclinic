@@ -287,6 +287,12 @@
     @include tablets {
         justify-content: flex-end;
     }
+    & svg path {
+        fill: $color-yellow;
+    }
+    & svg circle {
+        stroke: $color-yellow;
+    }
 }
 
 .footer__copiright {

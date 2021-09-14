@@ -27,6 +27,9 @@ let Visible = function(target) {
 
         } else {
             // Если элемент не видно, то запускаем этот код
+            if (target[i].classList.contains('hero')) {
+                target[i].classList.remove('anitrigger');
+            }
 
         };
     }
@@ -83,12 +86,13 @@ window.addEventListener('load', function() {
 
         // Вызываем анимацию на элементе
         Visible(element);
-
+        Visible(document.querySelectorAll('.hero'));
         showAndHideMenuOnScroll();
 
         showAndHideBtnOnScroll();
     });
     Visible(element);
+    Visible(document.querySelectorAll('.hero'));
     // А также запустим функцию сразу. А то вдруг, элемент изначально видно, и для элементов в прелоуадере
     setTimeout(function() {
         Visible(elPreload);

@@ -9,6 +9,7 @@ import * as validation from './modules/validation.js';
 import * as inputFile from './modules/inputFile.js';
 import { mapInit } from './modules/map.js';
 import * as accordion from './modules/accordion.js';
+
 import 'lazysizes';
 import CustomSelect from 'vanilla-js-dropdown';
 
@@ -18,7 +19,7 @@ window.jQuery = $;
 var fancybox = require("@fancyapps/fancybox");
 
 import Masonry from 'masonry-layout'
-
+import * as formsubmit from './modules/formsubmit.js';
 // dropdown for select
 
 if (document.querySelector('#input-select')) {
@@ -77,11 +78,11 @@ if (grid) {
 
 $('[data-fancybox]').fancybox({
     buttons: [
-        'slideShow',
-        'fullScreen',
-        'thumbs',
+        // 'slideShow',
+        // 'fullScreen',
+        // 'thumbs',
         //'share',
-        'download',
+        // 'download',
         //'zoom',
         'close'
     ],
@@ -100,7 +101,7 @@ $('[data-fancybox]').fancybox({
     }
 
 });
-
+$.fancybox.defaults.backFocus = false;
 
 
 
@@ -164,8 +165,6 @@ window.addEventListener('load', function() {
 
         }
 
-
-
         setTimeout(function() {
             // Убираем прелоадер и начинаем проигрывать видео
             if (preloader) {
@@ -173,8 +172,26 @@ window.addEventListener('load', function() {
                 preloader.style.pointerEvents = 'none';
 
                 if (videoHero) {
-                    videoHero.play();
+                    if (document.querySelector('.hero').classList.contains('anitrigger')) {
+                        videoHero.play();
+                    } else {
+                        videoHero.pause();
+                    }
+                    window.addEventListener('scroll', function() {
+                        if (document.querySelector('.hero').classList.contains('anitrigger')) {
+                            videoHero.play();
+
+
+                        } else {
+                            videoHero.pause();
+
+                        }
+                    })
+
                 }
+
+
+
 
                 // При клике включаем звук, пока оставить потом посмотри
                 let firstClick;
@@ -261,9 +278,29 @@ for (let i = 0; i < frame.length; i++) {
     })
 }
 
-document.querySelector('.search').addEventListener('click', function() {
+document.querySelector('.search').addEventListener('click', function(event) {
+    event.stopPropagation();
+    document.querySelector('.header').addEventListener('click', function(event) {
+        event.stopPropagation();
+    })
+
+    function remove() {
+
+        document.querySelector('.search').classList.remove('active');
+        document.querySelector('.form-search').classList.remove('active');
+
+    }
+
     document.querySelector('.search').classList.toggle('active');
     document.querySelector('.form-search').classList.toggle('active');
+
+    if (document.querySelector('.search').classList.contains('active')) {
+        document.addEventListener('click', remove)
+    } else {
+        document.removeEventListener('click', remove)
+    }
+
+
 })
 
 if (document.querySelector('.share')) {

@@ -36,6 +36,7 @@
     border: none;
     background: transparent;
     padding: 0;
+    font: inherit;
     margin: 0;
     box-sizing: border-box;
     outline: none;
@@ -207,13 +208,16 @@
         height: 100%;
         object-fit: cover;
         transition: 0.4s;
+        image-rendering: -webkit-optimize-contrast;
         -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
         -ms-backface-visibility: hidden;
+        will-change: transform;
+        transform: translateZ(0);
     }
     &:hover {
         & img {
-            transform: scale(1.09);
+            transform: scale(1.1);
         }
     }
     & a {
@@ -257,7 +261,8 @@
 @mixin video-link {
     background: url(../img/btn-play.svg);
     background-repeat: no-repeat;
-    background-position: center;
+    // background-position: center;
+    background-position: 20px 20px;
     background-size: 50px 50px;
     opacity: 1 !important;
     @include laptop {

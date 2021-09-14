@@ -1,6 +1,7 @@
 // Валидация телефона
 
-
+var $ = require("jquery");
+window.jQuery = $;
 
 function telValidation() {
 
@@ -111,12 +112,15 @@ telValidation();
 function prevent(evt) {
     evt.preventDefault();
 }
+
+let flagCheckValidation = false;
 let forms = document.querySelectorAll('form');
 forms.forEach((form) => {
     let inputwrap = form.querySelectorAll('.input-label');
     let btnSubmit = form.querySelector('.input-submit');
 
     let flagMadeValidation = false;
+
 
     function inputValidation() {
 
@@ -128,49 +132,82 @@ forms.forEach((form) => {
 
             let messageError = document.createElement('div');
             messageError.className = "alert";
-            if (!input.checkValidity()) {
+            if (input) {
+                if (!input.checkValidity()) {
 
-                if (!input.value) {
-                    validMessage = "Поле обязательно для заполнения";
-                    element.classList.add('error');
-                    messageError.innerHTML = validMessage;
-                    element.append(messageError)
+                    if (!input.value) {
+                        validMessage = "Поле обязательно для заполнения";
+                        element.classList.add('error');
+                        messageError.innerHTML = validMessage;
+                        element.append(messageError)
+
+                    } else {
+                        validMessage = input.dataset.title;
+
+                        element.classList.add('error');
+                        messageError.innerHTML = validMessage;
+                        element.append(messageError)
+
+                    }
+
 
                 } else {
-                    validMessage = input.dataset.title;
+                    element.classList.remove('error');
+                    if (element.querySelector('.alert')) {
+                        element.querySelector('.alert').remove();
+                    }
 
-                    element.classList.add('error');
-                    messageError.innerHTML = validMessage;
-                    element.append(messageError)
+                    if (!form.classList.contains('form-search')) {
+                        let recaptcha = form.querySelector('.g-recaptcha');
+
+
+
+                        if (grecaptcha.getResponse(recaptcha.dataset.recapthaId) == "") {
+
+                            let messageError = document.createElement('div');
+                            messageError.className = "alert";
+                            let validMessage = "Пройдите пожалуйста проверку";
+                            messageError.innerHTML = validMessage;
+                            form.querySelector('.input-label__recaptcha').append(messageError);
+
+
+                            document.addEventListener('click', function(event) {
+
+                                if (grecaptcha.getResponse(recaptcha.dataset.recapthaId) == "") {
+
+                                    let messageError = document.createElement('div');
+                                    messageError.className = "alert";
+                                    let validMessage = "Пройдите пожалуйста проверку";
+                                    messageError.innerHTML = validMessage;
+                                    form.querySelector('.input-label__recaptcha').append(messageError);
+                                } else {
+                                    if (form.querySelector('.input-label__recaptcha').querySelector('.alert')) {
+                                        form.querySelector('.input-label__recaptcha').querySelector('.alert').remove();
+                                    }
+
+
+                                }
+                            })
+
+                        } else {
+
+                            if (!form.querySelector('.error')) {
+                                flagCheckValidation = true;
+                            }
+                        }
+
+
+                    }
+
 
                 }
-
-                if (form.querySelector('.error')) {
-                    form.addEventListener('submit', prevent)
-
-                    btnSubmit.addEventListener('submit', prevent)
-
-                }
-
-            } else {
-                element.classList.remove('error');
-                if (element.querySelector('.alert')) {
-                    element.querySelector('.alert').remove();
-                }
-                if (!form.querySelector('.error')) {
-
-
-                    btnSubmit.removeEventListener('submit', prevent)
-
-                    form.removeEventListener('submit', prevent)
-                }
-
             }
         })
     }
     if (btnSubmit) {
         btnSubmit.addEventListener('click', function() {
             inputValidation()
+
             flagMadeValidation = true;
         })
     }
@@ -178,10 +215,66 @@ forms.forEach((form) => {
 
     inputwrap.forEach((element) => {
         let input = element.querySelector('.input');
-        input.addEventListener('blur', function() {
-            if (flagMadeValidation) {
-                inputValidation()
-            }
-        })
+        if (input) {
+            input.addEventListener('blur', function() {
+                if (flagMadeValidation) {
+                    inputValidation()
+                }
+            })
+        }
+
     });
+})
+
+
+
+document.querySelectorAll('form').forEach((element, index) => {
+    if (!element.classList.contains('form-search')) {
+
+
+        element.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let dataF = new FormData(element);
+            let htmlData = element.dataset.ok;
+
+            console.log(flagCheckValidation);
+            if (flagCheckValidation) {
+
+                $.ajax({
+                    url: element.getAttribute('action'),
+                    type: "POST",
+                    data: dataF,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    success: function(data) {
+
+                        document.querySelector('.modal-ok .modal-ok__text').innerHTML = htmlData;
+                        $.fancybox.open({
+                            src: '#popup-modal-ok',
+
+                        });
+                        setTimeout(function() {
+                            $.fancybox.close(true);
+
+                        }, 3000)
+                    },
+                    error: function(data) {
+
+                        $.fancybox.open({
+                            src: '#popup-modal-error',
+
+                        });
+                        setTimeout(function() {
+                            $.fancybox.close(true);
+
+                        }, 3000)
+                    }
+
+                });
+            }
+
+        })
+    }
+
 })

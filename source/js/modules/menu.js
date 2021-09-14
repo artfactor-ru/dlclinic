@@ -13,9 +13,9 @@ btn.addEventListener('click', function() {
 
 
     menuitem.forEach((element) => {
-        let link = element.querySelector('.burger-nav-item__more>.burger-nav-mobile__link>svg')
+        let link = element.querySelector('.burger-nav-item__more>.burger-nav-mobile__link')
 
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(event) {
             event.preventDefault();
             let levelmenu = element.querySelector('.burger-nav-mobile__list-level');
 
@@ -66,3 +66,20 @@ if (subTrigger) {
 
     })
 }
+
+
+document.querySelectorAll('.with-sub').forEach(element => {
+    element.addEventListener('click', function(event) {
+        // event.preventDefault();
+        let active = document.querySelector('.with-sub.active');
+        if (active && active != element) {
+            active.classList.remove('active');
+        }
+
+        element.classList.toggle('active');
+
+        document.querySelector('.search').addEventListener('click', function() {
+            element.classList.remove('active');
+        })
+    })
+});

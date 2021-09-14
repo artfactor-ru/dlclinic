@@ -25,6 +25,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 15px;
+    pointer-events: none;
     @include tablets {
         padding: 20px;
     }

@@ -137,9 +137,9 @@
         background-position: center;
         background-size: 50px 50px;
         opacity: 1 !important;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 20px;
+        left: 20px;
+        // transform: translate(-50%, -50%);
         @include laptop {
             width: 56px;
             height: 56px;
@@ -164,13 +164,17 @@
     width: 100%;
     object-fit: cover;
     @media(min-width: 565px) {
-        height: 28vw;
+        height: 25vw;
     }
     @include tablets {
-        height: 28vw;
+        height: 22vw;
     }
     @include laptop {
-        height: 18vw;
+        height: 14vw;
+        max-height: 310px;
+    }
+    @include desktop {
+        height: 13vw;
         max-height: 310px;
     }
 }

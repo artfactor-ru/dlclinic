@@ -42,7 +42,7 @@
         width: 42%;
         position: relative;
     }
-    & img {
+    & .map__img {
         height: 55%;
         width: 100%;
         object-fit: cover;
@@ -52,13 +52,13 @@
         cursor: pointer;
         will-change: transform;
     }
-    & img:last-child {
+    & .map__img:last-child {
         // transform: translate( 50%, -10%);
         bottom: 0;
         right: -25%;
         // z-index: 10;
     }
-    & img.active {
+    & .map__img.active {
         // z-index: 11;
         // transform: scale(1.1) translateY(22%);
         animation-name: map-active;
@@ -66,13 +66,13 @@
         animation-timing-function: linear;
         animation-fill-mode: forwards;
     }
-    & img:last-child.active {
+    & .map__img:last-child.active {
         animation-name: map-active2;
         animation-duration: 1s;
         animation-timing-function: linear;
         animation-fill-mode: forwards;
     }
-    & img.unactive {
+    & .map__img.unactive {
         // z-index: 11;
         // transform: scale(1.1) translateY(22%);
         animation-name: map-unactive;
@@ -80,7 +80,7 @@
         animation-timing-function: linear;
         animation-fill-mode: forwards;
     }
-    & img:first-child.unactive {
+    & .map__img:first-child.unactive {
         animation-name: map-unactive2;
         animation-duration: 1s;
         animation-timing-function: linear;
@@ -89,10 +89,10 @@
 }
 
 .map--animation1 .map__column:first-child {
-    & img {
+    & .map__img {
         transition: transform 0.4s ease;
     }
-    & img.active {
+    & .map__img.active {
         // z-index: 11;
         // transform: scale(1.1);
         animation-name: map-activeV;
@@ -100,13 +100,13 @@
         animation-timing-function: linear;
         animation-fill-mode: forwards;
     }
-    & img:last-child.active {
+    & .map__img:last-child.active {
         animation-name: map-activeV;
         animation-duration: 1s;
         animation-timing-function: linear;
         animation-fill-mode: forwards;
     }
-    & img.unactive {
+    & .map__img.unactive {
         // z-index: 9;
         // transform: scale(1);
         animation-name: map-unactiveV;
@@ -252,6 +252,35 @@
         // height: 800px;
         height: 42vw;
     }
+}
+
+.map__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map__img .contacts__data {
+    position: absolute;
+    background: rgba(244, 242, 244, 0.9);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    color: $color-grey;
+    opacity: 0;
+    transition: $transition-speed;
+    pointer-events: none;
+}
+
+.map__img.active .contacts__data {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.map__img.active.first .contacts__data {
+    opacity: 0;
+    pointer-events: none;
 }
 
 #yandexmapa {

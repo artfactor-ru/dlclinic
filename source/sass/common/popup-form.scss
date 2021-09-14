@@ -176,6 +176,10 @@
     }
 }
 
+.input-label__recaptcha .alert {
+    right: 15%;
+}
+
 @keyframes animation-alert {
     0% {
         opacity: 0;
@@ -262,6 +266,8 @@
 .js-Dropdown-list.is-open {
     display: block;
     height: auto;
+    max-height: 500px;
+    overflow: auto;
     opacity: 1;
 }
 
@@ -298,5 +304,35 @@
         display: block;
         text-align: left;
         position: relative;
+    }
+}
+
+.modal {
+    text-align: center;
+    width: 590px;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: $color-grey;
+    & h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        @include laptop {
+            font-size: 32px;
+            line-height: 36px;
+        }
+        @include desktop {
+            font-size: 32px;
+            line-height: 36px;
+        }
+    }
+    & p {
+        font-size: 20px;
+        line-height: 25px;
+        @include laptop {
+            font-size: 24px;
+            line-height: 30px;
+        }
     }
 }
