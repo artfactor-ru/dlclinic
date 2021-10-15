@@ -176,22 +176,24 @@
             width: 100%;
             @include list-destroy;
             &>li {
-                padding-left: 15px;
-                padding-right: 15px;
-                padding-top: 30px;
-                padding-bottom: 30px;
                 cursor: pointer;
+                flex-grow: 1;
                 &>a {
                     color: inherit;
                     font-style: normal;
                     font-weight: 500;
                     font-size: 18px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    padding-top: 30px;
+                    padding-bottom: 30px;
                     line-height: 18px;
                     display: flex;
                     align-items: center;
                     transition: $transition-speed;
                     position: relative;
                     height: 100%;
+                    box-sizing: border-box;
                     @include desktop {
                         font-size: 18px;
                         line-height: 18px;
@@ -208,7 +210,6 @@
                     position: absolute;
                     bottom: -49px;
                     background: $color-light-grey;
-                    padding: 15px 0;
                     width: 100%;
                     margin: 0 auto;
                     padding-left: 50px;
@@ -219,12 +220,18 @@
                     z-index: 1001;
                     transition: $transition-speed;
                     pointer-events: none;
+                    &>li {
+                        flex-grow: 1;
+                    }
                     &>li>a {
                         font-style: normal;
                         font-weight: 500;
                         font-size: 16px;
                         line-height: 20px;
+                        display: block;
                         color: $color-grey;
+                        padding: 15px 0;
+                        text-align: center;
                         &:hover {
                             opacity: 1;
                             color: #FFFFFF;
