@@ -3,9 +3,11 @@
     padding-top: 35px;
     padding-bottom: 20px;
     overflow: hidden;
+
     @media(min-width: 565px) {
         margin-right: -10px;
     }
+
     @include laptop {
         margin-right: -50px;
         padding-top: 45px;
@@ -19,6 +21,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+
     @include laptop {
         padding: 35px 35px 45px;
     }
@@ -38,6 +41,7 @@
     left: 10px;
     top: -12px;
     background-color: #fff;
+
     @include laptop {
         width: 35px;
         height: 35px;
@@ -62,6 +66,7 @@
     right: 10px;
     bottom: -12px;
     background-color: #fff;
+
     @include laptop {
         width: 35px;
         height: 35px;
@@ -77,12 +82,14 @@
         overflow: hidden;
         opacity: 1 !important;
     }
+
     & img {
         transition: 0.4s;
         -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
         -ms-backface-visibility: hidden;
     }
+
     & a:hover {
         & img {
             transform: scale(1.09);
@@ -94,9 +101,11 @@
     color: $color-light-grey;
     display: inline-block;
     margin-top: 15px;
+
     @include tablets {
         margin-top: 5px;
     }
+
     @include text-date;
 }
 
@@ -106,10 +115,12 @@
     font-size: 18px;
     line-height: 24px;
     margin-top: 5px;
+
     @include tablets {
         font-size: 22px;
         line-height: 30px;
     }
+
     @include laptop {
         font-size: 26px;
         line-height: 36px;
@@ -126,6 +137,7 @@
     height: 100%;
     position: relative;
     opacity: 1 !important;
+
     &::after {
         content: "";
         position: absolute;
@@ -139,12 +151,14 @@
         opacity: 1 !important;
         top: 20px;
         left: 20px;
+
         // transform: translate(-50%, -50%);
         @include laptop {
             width: 56px;
             height: 56px;
             background-size: 56px 56px;
         }
+
         @include desktop {
             width: 75px;
             height: 75px;
@@ -163,16 +177,20 @@
     height: 48vw;
     width: 100%;
     object-fit: cover;
+
     @media(min-width: 565px) {
         height: 25vw;
     }
+
     @include tablets {
         height: 22vw;
     }
+
     @include laptop {
         height: 14vw;
         max-height: 310px;
     }
+
     @include desktop {
         height: 13vw;
         max-height: 310px;
@@ -192,13 +210,17 @@
 // МАсонри секта
 .grid-item {
     width: 100%;
+    position: relative;
     margin-bottom: 40px;
+
     @media(min-width: 565px) {
         width: calc(50% - 10px);
     }
+
     @include tablets {
         margin-bottom: 45px;
     }
+
     @include laptop {
         width: calc(33% - 40px);
         margin-bottom: 65px;
@@ -209,6 +231,7 @@
     @media (min-width: 565px) {
         width: 10px;
     }
+
     @include laptop {
         width: 40px;
     }
@@ -216,6 +239,7 @@
 
 .button--review {
     margin-bottom: 40px;
+
     @include tablets {
         margin-bottom: 25px;
     }

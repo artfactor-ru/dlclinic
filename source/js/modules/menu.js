@@ -13,21 +13,46 @@ btn.addEventListener('click', function() {
 
 
     menuitem.forEach((element) => {
-        let link = element.querySelector('.burger-nav-item__more>.burger-nav-mobile__link')
+         let link = element.querySelector('.burger-nav-item__more>.burger-nav-mobile__link');
 
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            let levelmenu = element.querySelector('.burger-nav-mobile__list-level');
+         console.log(link.getAttribute('href'));
+        if(link.getAttribute('href') == "#"){
 
-            let backbtn = element.querySelector('.burger-nav-mobile__item--back');
+            
+            link = element.querySelector('.burger-nav-item__more>.burger-nav-mobile__link');
 
-            levelmenu.classList.add('active');
+             link.addEventListener('click', function(event) {
+                event.preventDefault();
+                    let levelmenu = element.querySelector('.burger-nav-mobile__list-level');
 
-            backbtn.addEventListener('click', function() {
-                console.log(levelmenu);
-                levelmenu.classList.remove('active');
+                    let backbtn = element.querySelector('.burger-nav-mobile__item--back');
+
+                    levelmenu.classList.add('active');
+
+                    backbtn.addEventListener('click', function() {
+                        console.log(levelmenu);
+                        levelmenu.classList.remove('active');
+                    })
+                })
+        }else{ 
+            link = element.querySelector('.burger-nav-item__more>.burger-nav-mobile__link svg');
+            link.addEventListener('click', function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                let levelmenu = element.querySelector('.burger-nav-mobile__list-level');
+
+                let backbtn = element.querySelector('.burger-nav-mobile__item--back');
+
+                levelmenu.classList.add('active');
+
+                backbtn.addEventListener('click', function() {
+                    console.log(levelmenu);
+                    levelmenu.classList.remove('active');
+                })
             })
-        })
+        }
+
+       
     })
 
 

@@ -30,7 +30,7 @@ a {
 // }
 p a {
     color: $color-yellow;
-    text-decoration: underline;
+    // text-decoration: underline;
 }
 
 p a:hover {
@@ -42,12 +42,15 @@ p a:hover {
     box-sizing: border-box;
     padding: 0px 30px;
     position: relative;
+
     @include tablets {
         padding: 0px 40px;
     }
+
     @include laptop {
         padding: 0px 45px;
     }
+
     @include desktop {
         margin: 0 auto;
         padding: 0 50px;
@@ -59,7 +62,15 @@ h3 {
     @include h3-style;
 }
 
+.h3 {
+    @include h3-style;
+}
+
 h2 {
+    @include h2-style;
+}
+
+.h2 {
     @include h2-style;
 }
 
@@ -113,6 +124,7 @@ p {
 .block-dark {
     background: $color-grey;
     color: $color-yellow;
+
     & p {
         color: #fff;
     }
@@ -143,18 +155,23 @@ p {
     justify-content: center;
     background: $color-grey;
     z-index: 200;
+
     @include laptop {
         right: 45px;
     }
+
     opacity: 0;
     pointer-events: none;
+
     &.active {
         opacity: 1;
         pointer-events: auto;
     }
+
     & svg {
         transition: $transition-speed;
     }
+
     &:hover svg {
         transform: translateY(-5px) scaleY(1.05);
     }
@@ -173,36 +190,44 @@ p {
     transition: $transition-speed;
     position: relative;
     margin-top: 20px;
+
     @include tablets {
         font-size: 18px;
         line-height: 22px;
         margin-top: 65px;
         justify-content: flex-end;
     }
+
     @include laptop {
         font-size: 24px;
         line-height: 24px;
         margin-top: 90px;
     }
+
     @include desktop {
         font-size: 24px;
         line-height: 24px;
         margin-top: 90px;
     }
+
     & svg {
         margin-left: 10px;
         width: 21px;
         height: 14px;
         transition: $transition-speed;
+
         @include laptop {
             width: 30px;
             height: 20px;
         }
+
         @include desktop {}
+
         & path {
             transition: $transition-speed;
         }
     }
+
     &:hover svg {
         transform: scaleX(1.5) translateX(5px);
     }
@@ -210,6 +235,7 @@ p {
 
 .block-light-grey .link-more:hover {
     color: #ffffff;
+
     & svg path {
         fill: #ffffff;
     }
@@ -217,6 +243,7 @@ p {
 
 .block-dark .link-more:hover {
     color: $color-light-grey;
+
     & svg path {
         fill: $color-light-grey;
     }
@@ -235,36 +262,44 @@ p {
     transition: $transition;
     position: relative;
     margin-top: 20px;
+
     @include tablets {
         font-size: 18px;
         line-height: 22px;
         margin-top: 25px;
         // justify-content: flex-end;
     }
+
     @include laptop {
         font-size: 24px;
         line-height: 24px;
         margin-top: 90px;
     }
+
     @include desktop {
         font-size: 24px;
         line-height: 24px;
         margin-top: 90px;
     }
+
     & svg {
         margin-left: 10px;
         width: 14px;
         height: 9px;
         transition: $transition-speed;
+
         @include laptop {
             width: 30px;
             height: 20px;
         }
+
         @include desktop {}
     }
+
     & path {
         transition: $transition-speed;
     }
+
     &:hover svg {
         transform: scaleX(1.5) translateX(5px);
     }
@@ -272,6 +307,7 @@ p {
 
 .block-light-grey .link-more--small:hover {
     color: #ffffff;
+
     & svg path {
         fill: #ffffff;
     }
@@ -279,6 +315,7 @@ p {
 
 .block-dark .link-more--small:hover {
     color: $color-light-grey;
+
     & svg path {
         fill: $color-light-grey;
     }
@@ -296,6 +333,7 @@ p {
     transition: $transition;
     position: relative;
     margin-top: 30px;
+
     @include tablets {
         font-size: 18px;
         line-height: 22px;
@@ -303,36 +341,45 @@ p {
         margin-bottom: 45px;
         // justify-content: flex-end;
     }
+
     @include laptop {
         font-size: 24px;
         line-height: 24px;
         margin-top: 15px;
         margin-bottom: 0;
     }
+
     &:hover {
         color: $color-light-grey;
     }
+
     & svg {
         margin-right: 10px;
         width: 21px;
         height: 14px;
         transition: $transition-speed;
+
         @include tablets {
             width: 30px;
             height: 20px;
         }
+
         @include laptop {
             width: 30px;
             height: 20px;
         }
+
         @include desktop {}
+
         & path {
             transition: $transition-speed;
         }
     }
+
     &:hover svg {
         transform: scaleX(1.1) translateX(-6px);
     }
+
     &:hover svg path {
         fill: $color-light-grey;
     }
@@ -361,12 +408,15 @@ p {
 
 .swiper-centered-wrapper .swiper-button-prev {
     left: 0;
+
     @include tablets {
         left: -30px;
     }
+
     @include laptop {
         left: -30px;
     }
+
     @include desktop {
         left: -40px;
     }
@@ -374,12 +424,15 @@ p {
 
 .swiper-centered-wrapper .swiper-button-next {
     right: 0;
+
     @include tablets {
         right: -30px;
     }
+
     @include laptop {
         right: -30px;
     }
+
     @include desktop {
         right: -40px;
     }
@@ -403,6 +456,7 @@ p {
 .swiper-centered-wrapper .swiper-button-prev::after {
     font-size: 23px;
     font-weight: bold;
+
     @include laptop {
         font-size: 30px;
     }
@@ -420,15 +474,18 @@ p {
 .swiper-container--centered .swiper-slide {
     width: 100%;
     height: 184px;
+
     // pointer-events: none;
     @include tablets {
         width: 456px !important;
         height: 262px !important;
     }
+
     @include laptop {
         width: 45% !important;
         height: 332px !important;
     }
+
     @include desktop {
         width: 730px !important;
         height: 420px !important;
@@ -442,6 +499,7 @@ p {
 // }
 .swiper-centered-wrapper--promo {
     margin-top: 30px;
+
     @include laptop {
         margin-top: 60px;
         margin-bottom: 30px;
@@ -450,12 +508,15 @@ p {
 
 .swiper-centered-wrapper--promo .swiper-button-prev {
     left: -25px;
+
     @include tablets {
         left: -30px;
     }
+
     @include laptop {
         left: -30px;
     }
+
     @include desktop {
         left: -40px;
     }
@@ -463,12 +524,15 @@ p {
 
 .swiper-centered-wrapper--promo .swiper-button-next {
     right: -25px;
+
     @include tablets {
         right: -30px;
     }
+
     @include laptop {
         right: -30px;
     }
+
     @include desktop {
         right: -40px;
     }
@@ -485,13 +549,16 @@ p {
 
 .parallax--logo-right {
     right: 0;
+
     @include tablets {
         top: -30%;
         right: 40px;
     }
+
     @include laptop {
         right: 45px;
     }
+
     @include desktop {
         right: 50px;
     }
@@ -499,14 +566,17 @@ p {
 
 .parallax--logo-right-bottom {
     bottom: 0%;
+
     @include tablets {
         // top: -30%;
         left: 40px;
     }
+
     @include laptop {
         left: 45px;
         bottom: -35px;
     }
+
     @include desktop {
         // top: -27%;
         left: 50px;
@@ -516,10 +586,12 @@ p {
 
 .parallax--logo {
     display: none;
+
     @include tablets {
         display: block;
         width: 55%;
     }
+
     @include laptop {
         width: 62%;
     }
@@ -527,15 +599,19 @@ p {
 
 .parallax--logo-left {
     left: 0;
+
     @include tablets {
         left: 40px;
         top: -22%;
     }
+
     top: -25%;
+
     @include laptop {
         top: -230px;
         left: 45px;
     }
+
     @include desktop {
         top: -200px;
         left: 50px;
@@ -546,6 +622,7 @@ p {
     @include tablets {
         top: -9%;
     }
+
     @include laptop {
         top: -13%;
     }
@@ -560,13 +637,16 @@ p {
     background-color: $color-light-grey;
     overflow: hidden;
     position: relative;
+
     @include tablets {
         height: 200px;
     }
+
     @include laptop {
         height: 420px;
         background-attachment: fixed;
     }
+
     @include desktop {
         height: 470px;
     }
@@ -577,6 +657,7 @@ p {
     font-style: normal;
     display: inline-block;
     font-weight: 500;
+    font-family: inherit;
     font-size: 18px;
     line-height: 18px;
     text-align: center;
@@ -584,33 +665,41 @@ p {
     padding: 10px 30px;
     background: #E2D7B9;
     text-align: center;
+
     @include tablets {
         font-size: 18px;
         line-height: 18px;
     }
+
     @include laptop {
         font-size: 20px;
         line-height: 32px;
     }
+
     @include desktop {
         padding: 10px 70px;
     }
+
     &:hover {
         opacity: 1;
     }
+
     & span {
         transition: $transition-speed;
         display: inline-flex;
         will-change: transform;
         align-items: center;
     }
+
     &:hover span {
         transform: scale(1.1);
     }
+
     & svg {
         margin-right: 20px;
         width: 20px;
         height: 20px;
+
         @include laptop {
             width: 30px;
             height: 30px;
@@ -627,12 +716,15 @@ p {
     background: #3A4047;
     justify-content: center;
     flex-shrink: 0;
+
     &:hover span {
         transform: scale(1.1);
     }
+
     @include tablets {
         padding: 20px 50px;
     }
+
     @include laptop {
         padding: 10px 80px;
     }
@@ -654,11 +746,13 @@ p {
 .flex-wrap {
     display: flex;
     flex-direction: column;
+
     @include tablets {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
+
     @include laptop {
         & h1 {
             margin: 0 !important;
@@ -669,20 +763,24 @@ p {
 .flex-wrap--center {
     margin-top: 25px;
     margin-bottom: 25px;
+
     @include tablets {
         flex-direction: column;
         align-items: center;
     }
+
     @include laptop {
         flex-direction: row;
         justify-content: center;
         position: relative;
+
         & .button {
             position: absolute;
             right: 0;
             top: 50%;
             transform: translateY(-50%);
         }
+
         & .link-back {
             position: absolute;
             left: 0;
@@ -690,6 +788,7 @@ p {
             transform: translateY(-50%);
         }
     }
+
     & .link-back {
         margin-top: 0;
     }
@@ -697,17 +796,21 @@ p {
 
 .flex-wrap--title {
     margin-top: 20px;
-    & h3 {
+
+    & .h3 {
         margin-bottom: 20px;
+
         @include laptop {
             margin-bottom: 0;
         }
     }
+
     @include laptop {
         align-items: flex-start;
         margin-top: 30px;
         margin-bottom: 30px;
     }
+
     @include desktop {
         margin-top: 40px;
         margin-bottom: 40px;
@@ -728,6 +831,7 @@ p {
     height: 40px;
     position: relative;
     transition: $transition;
+
     &::after {
         content: "";
         position: absolute;
@@ -738,6 +842,7 @@ p {
         left: 0;
         background-color: #ffffff;
     }
+
     &::before {
         content: "";
         position: absolute;
@@ -748,6 +853,7 @@ p {
         left: 0;
         background-color: #ffffff;
     }
+
     &:hover {
         transform: scale(0.85);
     }
@@ -788,33 +894,43 @@ p {
 .table {
     border-collapse: collapse;
     width: 100%;
+
+    table-layout: fixed;
+
     thead {
         border: 1px solid $color-grey;
         background-color: $color-grey;
+
         th {
             padding: 10px;
             font-size: 18px;
             font-weight: normal;
             text-align: left;
             color: #ffffff;
+
             @include laptop {
                 padding: 24px 30px;
                 font-size: 24px;
             }
         }
     }
+
     td {
         padding: 8px 10px;
-        font-size: 14px;
+        font-size: 12px;
         border: 0.5px solid $color-light-grey;
+        word-break: break-word;
+
         @include laptop {
             padding: 24px 30px;
             font-size: 18px;
         }
     }
+
     td:last-child {
         white-space: nowrap;
         text-align: center;
+
         @include laptop {
             min-width: 230px;
         }
@@ -842,6 +958,7 @@ p {
     display: flex;
     align-items: center;
     height: 30px;
+
     img {
         margin-right: 6px;
     }
@@ -874,6 +991,7 @@ p {
     right: 0;
     width: 21px;
     height: 21px;
+
     &:hover {
         background-color: $color-red;
     }
@@ -889,4 +1007,8 @@ p {
     will-change: transform;
     transform: translateZ(0);
     backface-visibility: hidden;
+}
+
+.swiper-container-autoheight {
+    padding-bottom: 40px;
 }

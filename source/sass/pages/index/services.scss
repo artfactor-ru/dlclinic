@@ -16,15 +16,18 @@
     color: #fff;
     display: flex;
     @include el-items;
+
     @include tablets {
         margin-bottom: 1%;
         width: 49%;
         height: 170px;
     }
+
     @include laptop {
         margin-bottom: 1%;
         height: 190px;
     }
+
     @include desktop {
         margin-bottom: 2%;
         height: 255px;
@@ -38,12 +41,15 @@
     margin-top: auto;
     padding: 15px;
     pointer-events: none;
+
     @include tablets {
         padding: 20px;
     }
+
     @include laptop {
         padding: 35px;
     }
+
     @include desktop {
         padding: 35px;
     }
@@ -55,7 +61,7 @@
     opacity: 1 !important;
 }
 
-.price h5 {
+.price .h5 {
     border: 1px solid $color-grey;
     background-color: $color-grey;
     padding: 10px;
@@ -63,9 +69,11 @@
     font-weight: normal;
     text-align: left;
     color: #ffffff;
+
     @include laptop {
         padding: 24px 30px;
         font-size: 24px;
     }
+
     margin: 0;
 }

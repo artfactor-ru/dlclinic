@@ -9,26 +9,32 @@
 }
 
 .history__thumbs .swiper-button-prev {
-    left: 0;
+    left: -30px;
+
     @include tablets {
         left: -30px;
     }
+
     @include laptop {
         left: -30px;
     }
+
     @include desktop {
         left: -40px;
     }
 }
 
 .history__thumbs .swiper-button-next {
-    right: 0;
+    right: -30px;
+
     @include tablets {
         right: -30px;
     }
+
     @include laptop {
         right: -30px;
     }
+
     @include desktop {
         right: -40px;
     }
@@ -52,6 +58,7 @@
 .history__thumbs .swiper-button-prev::after {
     font-size: 20px;
     font-weight: bold;
+
     @include laptop {
         font-size: 20px;
     }
@@ -72,6 +79,7 @@
     cursor: pointer;
     transition: $transition-speed;
     position: relative;
+
     @include laptop {
         font-size: 24px;
         line-height: 36px;
@@ -103,6 +111,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 25px;
+
     @include laptop {
         margin-top: 55px;
         flex-wrap: nowrap;
@@ -114,11 +123,13 @@
     margin-right: 45px;
     flex-shrink: 0;
     position: relative;
+
     & img {
         object-fit: cover;
         height: 100%;
         width: 100%;
     }
+
     @include laptop {
         width: 500px;
     }
@@ -131,16 +142,20 @@
     margin-top: 20px;
     font-size: 14px;
     line-height: 26px;
+
     @include tablets {
         font-size: 18px;
         line-height: 30px;
     }
+
     @include laptop {
         margin-top: 0;
     }
+
     a {
         color: $color-light-blue;
         text-decoration: underline;
+
         &:hover {
             color: $color-light-grey;
         }
@@ -151,6 +166,7 @@
     padding-bottom: 20px;
     font-size: 14px;
     line-height: 26px;
+
     @include tablets {
         font-size: 18px;
         line-height: 30px;
@@ -166,17 +182,20 @@
     position: absolute;
     left: 20px;
     bottom: 20px;
+
     & b {
         font-style: normal;
         font-weight: normal;
         font-size: 42px;
         line-height: 49px;
     }
+
     @include tablets {
         left: 30px;
         bottom: 30px;
         font-size: 32px;
         line-height: 36px;
+
         & b {
             font-size: 52px;
             line-height: 59px;

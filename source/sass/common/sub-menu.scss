@@ -21,11 +21,14 @@
     justify-content: space-between;
     align-items: center;
     background-color: $color-yellow;
+
     & svg {
         width: 10px;
         height: 17px;
     }
+
     cursor: pointer;
+
     @include tablets {
         display: none;
     }
@@ -40,10 +43,12 @@
     opacity: 0;
     transition: $transition-speed;
     pointer-events: none;
+
     &::before {
         background-color: $color-grey;
         height: 2px;
     }
+
     &::after {
         background-color: $color-grey;
         height: 2px;
@@ -72,6 +77,7 @@
     position: absolute;
     width: 100%;
     z-index: 100;
+
     @include tablets {
         transform: translateY(0);
         position: relative;
@@ -80,6 +86,7 @@
         flex-wrap: wrap;
         margin-top: 30px;
     }
+
     @include laptop {
         margin-top: 40px;
     }
@@ -98,13 +105,21 @@
     line-height: 20px;
     // position: relative;
     transition: $transition-speed;
+
     & svg {
         flex-shrink: 0;
+
         @include tablets {
             display: none;
         }
     }
+
+    & br {
+        display: none;
+    }
+
     border-bottom: 1px solid #FFFFFF;
+
     @include tablets {
         font-size: 20px;
         line-height: 36px;
@@ -115,11 +130,13 @@
         display: block;
         margin-right: 15px;
         margin-bottom: 20px;
+
         &:not(.current):hover {
             border: 1px solid $color-yellow;
             color: $color-yellow;
         }
     }
+
     &.current {
         @include tablets {
             border: 1px solid $color-yellow;
@@ -144,6 +161,7 @@
     @include tablets {
         border: 1px solid $color-grey;
         color: $color-grey;
+
         &:hover {
             border: 1px solid $color-light-grey;
             color: $color-light-grey;
@@ -162,6 +180,8 @@
     background-color: $color-yellow;
     overflow-y: auto;
     min-height: 100%;
+    z-index: 5;
+
     @include tablets {
         display: none;
     }
@@ -176,10 +196,16 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 25px;
+
     & .tag__link {
         justify-content: flex-start;
         align-items: center;
+
+        & br {
+            display: none;
+        }
     }
+
     & svg {
         transform: rotate(180deg);
         margin-right: 20px;
@@ -188,6 +214,7 @@
 
 .sub-tag {
     display: none;
+
     @include tablets {
         display: block;
     }
@@ -213,10 +240,12 @@
     color: $color-yellow;
     padding: 5px 10px;
     margin-bottom: 10px;
+
     &:not(.current):hover {
         color: $color-light-grey;
         border: 1px solid $color-light-grey;
     }
+
     &.current {
         border: 1px solid $color-yellow;
         background-color: $color-yellow;
@@ -227,6 +256,7 @@
 .block-light .sub-tag__link {
     color: $color-grey;
     border: 1px solid $color-yellow;
+
     &:not(.current):hover {
         color: $color-light-grey;
         border: 1px solid $color-light-grey;

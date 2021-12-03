@@ -21,6 +21,7 @@
     opacity: 0;
     visibility: hidden;
     transform: scale(0.9);
+
     @media(min-width: 1450px) {
         display: flex;
     }
@@ -117,6 +118,7 @@
     /* identical to box height, or 120% */
     color: #FFFFFF;
     transition: $transition-speed;
+
     &:hover {
         color: $color-yellow;
     }
@@ -129,6 +131,7 @@
     line-height: 36px;
     color: $color-yellow;
     transition: $transition-speed;
+
     &:hover {
         color: $color-light-grey;
     }
@@ -139,6 +142,7 @@
         opacity: 0;
         background-position-x: -70px;
     }
+
     100% {
         opacity: 1;
         background-position-x: 0px;
@@ -170,12 +174,15 @@
     transform: translateX(-100%);
     padding-top: 5px;
     padding-bottom: 45px;
+
     @include tablets {
         top: 75px;
     }
+
     @include laptop {
         top: 75px;
     }
+
     @media(min-width: 1450px) {
         display: none;
     }
@@ -271,7 +278,8 @@
     background: $color-light-grey;
     z-index: 100;
     top: 0;
-    width: 100%;
+    width: calc(100vw - 60px);
+    max-width: 400px - 60px;
     height: 100%;
     transform: translateX(150%);
     transition: $transition-speed;

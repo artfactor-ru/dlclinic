@@ -22,6 +22,14 @@ import Masonry from 'masonry-layout'
 import * as formsubmit from './modules/formsubmit.js';
 // dropdown for select
 
+
+document.addEventListener('lazybeforeunveil', function(e){
+    var bg = e.target.getAttribute('data-bg');
+    if(bg){
+        e.target.style.backgroundImage = 'url(' + bg + ')';
+    }
+});
+
 if (document.querySelector('#input-select')) {
     const select = new CustomSelect({
         elem: "input-select", // id of the original select element
@@ -51,7 +59,7 @@ const breakpointCheckerForMobile = function() {
     // if larger viewport and multi-row layout needed
 
     if (breakpointMobile.matches === true) {
-        mobileFlag = false
+        mobileFlag = false;
     } else if (breakpointMobile.matches === false) {
         mobileFlag = true;
     }
@@ -60,19 +68,25 @@ const breakpointCheckerForMobile = function() {
 
 
 // Нестандартная сетка в отзывах
-var grid = document.querySelector('.grid');
-var msnry;
-if (grid) {
-    imagesLoaded(grid, function() {
-        // init Isotope after all images have loaded
-        msnry = new Masonry(grid, {
-            gutter: '.gup-item',
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-item',
-            percentPosition: true
+
+let msnry;
+window.addEventListener('load', function(){
+    let grid = document.querySelector('.grid');
+    console.log(grid);
+    if (grid) {
+        imagesLoaded(grid, function() {
+            console.log('hi');
+            // init Isotope after all images have loaded
+            msnry = new Masonry(grid, {
+                gutter: '.gup-item',
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-item',
+                percentPosition: true
+            });
         });
-    });
-}
+    }
+});
+
 
 // Фэнси бокс галерея для галерей и попапов
 
@@ -119,9 +133,14 @@ window.addEventListener('resize', () => {
     breakpointMobile.addListener(breakpointCheckerForMobile);
     breakpointCheckerForMobile();
 
-    resizeWidthTagButton()
+    resizeWidthTagButton();
 });
 
+
+document.addEventListener('DOMContentLoaded', function(){
+     breakpointMobile.addListener(breakpointCheckerForMobile);
+    breakpointCheckerForMobile();
+});
 
 
 
@@ -153,9 +172,11 @@ window.addEventListener('load', function() {
     if (document.querySelector('.swiper-container--banner')) {
         document.querySelector('.swiper-container--banner').classList.add('load');
     }
-    resizeWidthTagButton()
+    resizeWidthTagButton();
 
     if (!mobileFlag) {
+
+        console.log(mobileFlag);
         if (videoHero) {
             // Загружаем видео
             videoHero.getElementsByTagName('source')[0].src = videoHero.dataset.src;
@@ -213,6 +234,8 @@ window.addEventListener('load', function() {
         }, 2000)
 
 
+    }else{
+        videoHero.getElementsByTagName('source')[0].src = '#';
     }
 
 

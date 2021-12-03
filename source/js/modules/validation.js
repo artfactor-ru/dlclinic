@@ -15,14 +15,14 @@ function telValidation() {
     }
 
     InputMask.prototype.getRegexp = function() {
-        let str = this.layout.replace(/_/g, '\\d')
-        str = str.replace(/\(/g, '\\(')
-        str = str.replace(/\)/g, '\\)')
-        str = str.replace(/\+/g, '\\+')
-        str = str.replace(/\s/g, '\\s')
+        let str = this.layout.replace(/_/g, '\\d');
+        str = str.replace(/\(/g, '\\(');
+        str = str.replace(/\)/g, '\\)');
+        str = str.replace(/\+/g, '\\+');
+        str = str.replace(/\s/g, '\\s');
 
         return str;
-    }
+    };
 
     InputMask.prototype.mask = function(e) {
         let _this = e.target,
@@ -34,7 +34,7 @@ function telValidation() {
         if (def.length >= val.length) val = def;
 
         _this.value = matrix.replace(/./g, function(a) {
-            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
         });
 
         if (e.type == "blur") {
@@ -43,7 +43,7 @@ function telValidation() {
         } else {
             this.setCursorPosition(_this.value.length, _this);
         }
-    }
+    };
 
     InputMask.prototype.setCursorPosition = function(pos, elem) {
         elem.focus();
@@ -53,16 +53,16 @@ function telValidation() {
             range.collapse(true);
             range.moveEnd("character", pos);
             range.moveStart("character", pos);
-            range.select()
+            range.select();
         }
-    }
+    };
 
     InputMask.prototype.setListeners = function() {
         this.el.addEventListener("input", this.mask.bind(this), false);
         this.el.addEventListener("focus", this.mask.bind(this), false);
         this.el.addEventListener("blur", this.mask.bind(this), false);
         this.el.addEventListener('keyup', function(evt) {
-            let length = this.value.length
+            let length = this.value.length;
             if (length < 18) {
                 this.style.border = "1px solid #de4145";
 
@@ -70,7 +70,7 @@ function telValidation() {
                 this.style.border = " 1px solid #3A4047";
             }
         });
-    }
+    };
 
     InputMask.prototype.getElement = function(selector) {
         if (selector === undefined) return false;
@@ -79,12 +79,12 @@ function telValidation() {
             var el = document.querySelector(selector);
             if (this.isElement(el)) return el;
         }
-        return false
-    }
+        return false;
+    };
 
     InputMask.prototype.isElement = function(element) {
         return element instanceof Element || element instanceof HTMLDocument;
-    }
+    };
 
 
 
@@ -94,8 +94,8 @@ function telValidation() {
         new InputMask({
             selector: input, // в качестве селектора может быть элемент, или, собственно css селектор('#input', '.input', 'input'). Если селектор - тег или класс - будет получен только первый элемент
             layout: input.dataset.mask
-        })
-    })
+        });
+    });
 }
 
 
@@ -139,14 +139,14 @@ forms.forEach((form) => {
                         validMessage = "Поле обязательно для заполнения";
                         element.classList.add('error');
                         messageError.innerHTML = validMessage;
-                        element.append(messageError)
+                        element.append(messageError);
 
                     } else {
                         validMessage = input.dataset.title;
 
                         element.classList.add('error');
                         messageError.innerHTML = validMessage;
-                        element.append(messageError)
+                        element.append(messageError);
 
                     }
 
@@ -187,7 +187,7 @@ forms.forEach((form) => {
 
 
                                 }
-                            })
+                            });
 
                         } else {
 
@@ -202,14 +202,15 @@ forms.forEach((form) => {
 
                 }
             }
-        })
+        });
     }
     if (btnSubmit) {
-        btnSubmit.addEventListener('click', function() {
-            inputValidation()
+        btnSubmit.addEventListener('click', function(e) {
+            e.preventDefault();
+            inputValidation();
 
             flagMadeValidation = true;
-        })
+        });
     }
 
 
@@ -218,26 +219,30 @@ forms.forEach((form) => {
         if (input) {
             input.addEventListener('blur', function() {
                 if (flagMadeValidation) {
-                    inputValidation()
+                    inputValidation();
                 }
-            })
+            });
         }
 
     });
-})
+});
 
 
 
 document.querySelectorAll('form').forEach((element, index) => {
+     let btnSubmit = element.querySelector('.input-submit');
     if (!element.classList.contains('form-search')) {
 
 
-        element.addEventListener('submit', function(event) {
+           console.log(`${element} элементы есть`);
+        btnSubmit.addEventListener('click', function(event) {
             event.preventDefault();
+
+            console.log(`${event} событие отправки происходит`);
             let dataF = new FormData(element);
             let htmlData = element.dataset.ok;
 
-            console.log(flagCheckValidation);
+            console.log(`${flagCheckValidation} пройдена валидация`);
             if (flagCheckValidation) {
 
                 $.ajax({
@@ -248,7 +253,7 @@ document.querySelectorAll('form').forEach((element, index) => {
                     contentType: false,
                     cache: false,
                     success: function(data) {
-
+                        console.log(`${data} успешная отправка формы`);
                         document.querySelector('.modal-ok .modal-ok__text').innerHTML = htmlData;
                         $.fancybox.open({
                             src: '#popup-modal-ok',
@@ -257,7 +262,7 @@ document.querySelectorAll('form').forEach((element, index) => {
                         setTimeout(function() {
                             $.fancybox.close(true);
 
-                        }, 3000)
+                        }, 3000);
                     },
                     error: function(data) {
 
@@ -268,13 +273,13 @@ document.querySelectorAll('form').forEach((element, index) => {
                         setTimeout(function() {
                             $.fancybox.close(true);
 
-                        }, 3000)
+                        }, 3000);
                     }
 
                 });
             }
 
-        })
+        });
     }
 
-})
+});

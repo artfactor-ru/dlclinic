@@ -1,6 +1,6 @@
 document.querySelectorAll('form').forEach(element => {
     const FILE_TYPES = ['gif', 'jpg', 'jpeg', 'png'];
-    const fileChooser = element.querySelector('input[type="file"]')
+    const fileChooser = element.querySelector('input[type="file"]');
     const preview = element.querySelector('.file-preview');
     const removeIcon = element.querySelector('.remove-button');
 
@@ -20,17 +20,17 @@ document.querySelectorAll('form').forEach(element => {
                     preview.src = reader.result;
                     preview.style.opacity = "1";
                     removeIcon.style.display = 'flex';
-                })
+                });
                 reader.readAsDataURL(file);
             }
-        })
+        });
 
         removeIcon.addEventListener('click', function() {
             removeIcon.style.display = 'none';
             preview.src = '';
             preview.style.opacity = "0";
             fileChooser.reset();
-        })
+        });
 
     }
 });
